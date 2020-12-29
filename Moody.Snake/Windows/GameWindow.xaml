@@ -1,0 +1,21 @@
+﻿<Window x:Class="Moody.Snake.Windows.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:behavior="clr-namespace:Moody.Snake.Behavior"
+        mc:Ignorable="d"
+        Title="GameWindow" Width="500" Height="500">
+    <Window.Resources>
+        <ResourceDictionary Source="../Resources/GameResources.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <i:Interaction.Behaviors>
+        <behavior:WindowsKeyDown></behavior:WindowsKeyDown>
+    </i:Interaction.Behaviors>
+    <DockPanel>
+        <ContentControl DockPanel.Dock="Top" ContentTemplate="{DynamicResource GameTemplate}" Content="{Binding}">
+        </ContentControl>
+    </DockPanel>
+
+</Window>

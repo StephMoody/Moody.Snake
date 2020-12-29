@@ -1,0 +1,16 @@
+﻿<Application x:Class="Moody.Snake.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Moody.Snake"
+             Startup="App_OnStartup">
+    <Application.Resources>
+        
+        
+        <ItemsPanelTemplate x:Key="HorizontalPanelTemplate">
+            <StackPanel Orientation="Horizontal"></StackPanel>
+        </ItemsPanelTemplate>
+        <ItemsPanelTemplate x:Key="VerticalPanelTemplate">
+            <StackPanel Orientation="Vertical"></StackPanel>
+        </ItemsPanelTemplate>
+    </Application.Resources>
+</Application>
