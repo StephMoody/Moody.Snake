@@ -1,38 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Moody.Common.Contracts;
-using Moody.MVVM.Base.Command;
 using Moody.MVVM.Base.ViewModel;
+using Moody.Snake.Model;
 
 namespace Moody.Snake.ViewModels
 {
     internal class GameWindowViewModel : ViewModelBase
     {
         private readonly Func<RowViewModel> _rowViewModelCreator;
+        private readonly SnakeLogic _snakeLogic;
          
-        public GameWindowViewModel(ILogManager logManager, Func<RowViewModel> rowViewModelCreator) : base(logManager)
+        public GameWindowViewModel(ILogManager logManager, Func<RowViewModel> rowViewModelCreator, SnakeLogic snakeLogic) : base(logManager)
         {
             _rowViewModelCreator = rowViewModelCreator;
+            _snakeLogic = snakeLogic;
         }
 
         public ObservableCollection<RowViewModel> RowViewModels { get; } = new ObservableCollection<RowViewModel>();
-
-        public RelayCommand KeyDown = new RelayCommand(null, () =>
-        {
-            Console.WriteLine();
-        });
-            
         
-        public void Initialize(int lenght)
+        public override Task Initialize()
         {
-            for (int i = 1; i <= lenght; i++)
+            foreach (KeyValuePair<int, List<Field>> snakeLogicRow in _snakeLogic.Rows)
             {
-                RowViewModel row = _rowViewModelCreator.Invoke();
-                row.Initialize(lenght, i);
-                RowViewModels.Add(row);
+                RowViewModel newRowViewModel = _rowViewModelCreator.Invoke();
+                newRowViewModel.Initialize(snakeLogicRow.Key, snakeLogicRow.Value);
+                RowViewModels.Add(newRowViewModel);
             }
             
             OnPropertyChanged(nameof(RowViewModels));
+            return Task.CompletedTask;
         }
     }
 }

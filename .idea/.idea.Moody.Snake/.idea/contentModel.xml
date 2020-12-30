@@ -70,6 +70,8 @@
         </e>
         <e p="Model" t="Include">
           <e p="Direction.cs" t="Include" />
+          <e p="Field.cs" t="Include" />
+          <e p="FieldContent.cs" t="Include" />
           <e p="SnakeLogic.cs" t="Include" />
         </e>
         <e p="Moody.Snake.csproj" t="IncludeRecursive" />
@@ -92,7 +94,6 @@
           <e p="GameResources.xaml" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
-          <e p="FieldContent.cs" t="Include" />
           <e p="FieldViewModel.cs" t="Include" />
           <e p="GameWindowViewModel.cs" t="Include" />
           <e p="RowViewModel.cs" t="Include" />

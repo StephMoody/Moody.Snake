@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using Moody.Common.Contracts;
-using NLog;
 using LogManager = Moody.Common.Logging.LogManager;
 
 namespace Moody.Common.Autofac

@@ -99,9 +99,10 @@
         <Compile Include="Behavior\WindowsKeyDown.cs" />
         <Compile Include="Converter\FieldContentToFillConverter.cs" />
         <Compile Include="Model\Direction.cs" />
+        <Compile Include="Model\Field.cs" />
+        <Compile Include="Model\FieldContent.cs" />
         <Compile Include="Model\SnakeLogic.cs" />
         <Compile Include="ViewModels\FieldViewModel.cs" />
-        <Compile Include="ViewModels\FieldContent.cs" />
         <Compile Include="ViewModels\GameWindowViewModel.cs" />
         <Compile Include="ViewModels\RowViewModel.cs" />
         <Compile Include="Windows\GameWindow.xaml.cs">

@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9efdbcd2-e653-424e-837a-471b80243db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Moody.Snake/Model/Field.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Common/Autofac/Registrator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Common/Autofac/Registrator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Application.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/Converter/FieldContentToFillConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Converter/FieldContentToFillConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/Moody.Snake.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Moody.Snake.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/FieldContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Model/FieldContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/FieldViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/FieldViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/GameWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/GameWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/RowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/RowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.UI/Busyspinner/Busyspinner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.UI/Busyspinner/Busyspinner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +31,29 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/220F2AAB-ED1D-4738-94A8-8B65AAF6C105/e7/b751c5ce/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Moody.Snake/Model/FieldContent.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/FieldViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/GameWindowViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Application.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/RowViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Common/Autofac/Registrator.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Converter/FieldContentToFillConverter.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Model/Field.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Properties/AssemblyInfo.cs" />
+      <option value="$PROJECT_DIR$/Moody.UI/Busyspinner/Busyspinner.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/App.xaml" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" />
+    </changedPaths>
+  </component>
   <component name="ProjectId" id="1mKTn930ThKPwPN3AcM0ygPKmZ9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -59,13 +95,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609241446310</updated>
-      <workItem from="1609241454539" duration="316000" />
+      <workItem from="1609241454539" duration="442000" />
+      <workItem from="1609241941719" duration="10000" />
+      <workItem from="1609321041757" duration="2541000" />
     </task>
     <servers />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="DotNet Exception Breakpoints" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

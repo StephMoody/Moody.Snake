@@ -1,4 +1,4 @@
-﻿namespace Moody.Snake.ViewModels
+﻿namespace Moody.Snake.Model
 {
     internal enum FieldContent
     {

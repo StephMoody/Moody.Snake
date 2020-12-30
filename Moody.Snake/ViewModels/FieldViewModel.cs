@@ -1,35 +1,44 @@
-﻿using Moody.Common.Contracts;
+﻿using System;
+using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
+using Moody.Snake.Model;
 
 namespace Moody.Snake.ViewModels
 {
-    internal class FieldViewModel : ViewModelBase
+    internal class FieldViewModel : ViewModelBase, IDisposable
     {
-        private FieldContent _content;
+        private readonly Field _field;
 
-        public FieldViewModel(ILogManager logManager) : base(logManager)
+        public FieldViewModel(ILogManager logManager, Field field) : base(logManager)
         {
+            _field = field;
+            _field.ContentUpdated += FieldOnContentUpdated;
+            
         }
 
-        public void Initialize(int x, int y)
-        {
-            PositionX = x;
-            PositionY = y;
-            Content = FieldContent.Empty;
-        }
+        public int PositionX => _field.PositionX;
+
+        public int PositionY => _field.PositionY;
+
+        public FieldContent Content => _field.Content;
         
-        public int PositionX { get; private set; }
-
-        public int PositionY { get; private set; }
-
-        public FieldContent Content
+        private void FieldOnContentUpdated(object sender, EventArgs e)
         {
-            get => _content;
-            set
+            try
             {
-                _content = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Content));
             }
+            catch (Exception exception)
+            {
+                LogManager.Error(exception);
+            }
+        }
+
+
+        public void Dispose()
+        {
+            _field.ContentUpdated -= FieldOnContentUpdated;
+
         }
     }
 }

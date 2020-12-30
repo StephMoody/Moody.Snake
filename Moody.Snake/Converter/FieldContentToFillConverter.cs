@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
-using Moody.Snake.ViewModels;
+using Moody.Snake.Model;
 
 namespace Moody.Snake.Converter
 {

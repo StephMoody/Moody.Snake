@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Threading;
 using Moody.Common.Extensions;
 using Moody.UI.WindowHandling;
@@ -47,7 +46,7 @@ namespace Moody.UI.Busyspinner
            {
                _windowShower.ViewModel.Stop();
                _windowShower.Close();
-           });  ;
+           });  
         }
     }
 }
