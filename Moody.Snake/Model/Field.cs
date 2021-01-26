@@ -8,13 +8,13 @@ namespace Moody.Snake.Model
 
         public void Initialize(int x, int y)
         {
-            PositionX = x;
-            PositionY = y;
+            Row = x;
+            Column = y;
         }
         
-        public int PositionX { get; private set; }
+        public int Row { get; private set; }
 
-        public int PositionY { get; private set; }
+        public int Column { get; private set; }
 
         public FieldContent Content
         {

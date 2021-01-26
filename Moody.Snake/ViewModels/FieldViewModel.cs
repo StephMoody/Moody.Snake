@@ -16,9 +16,9 @@ namespace Moody.Snake.ViewModels
             
         }
 
-        public int PositionX => _field.PositionX;
+        public int PositionX => _field.Row;
 
-        public int PositionY => _field.PositionY;
+        public int PositionY => _field.Column;
 
         public FieldContent Content => _field.Content;
         

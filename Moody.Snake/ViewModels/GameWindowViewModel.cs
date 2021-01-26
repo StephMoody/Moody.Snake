@@ -12,14 +12,29 @@ namespace Moody.Snake.ViewModels
     {
         private readonly Func<RowViewModel> _rowViewModelCreator;
         private readonly SnakeLogic _snakeLogic;
+        private readonly GameHeaderViewModel _gameHeaderViewModel;
          
-        public GameWindowViewModel(ILogManager logManager, Func<RowViewModel> rowViewModelCreator, SnakeLogic snakeLogic) : base(logManager)
+        public GameWindowViewModel(ILogManager logManager, Func<RowViewModel> rowViewModelCreator, SnakeLogic snakeLogic, GameHeaderViewModel gameHeaderViewModel) : base(logManager)
         {
             _rowViewModelCreator = rowViewModelCreator;
             _snakeLogic = snakeLogic;
+            _gameHeaderViewModel = gameHeaderViewModel;
         }
 
         public ObservableCollection<RowViewModel> RowViewModels { get; } = new ObservableCollection<RowViewModel>();
+
+        public GameHeaderViewModel GameHeaderViewModel => _gameHeaderViewModel;
+
+        public Direction CurrentDirection
+        {
+            get => _snakeLogic.CurrentDirection;
+            set
+            {
+                _snakeLogic.CurrentDirection = value;
+                OnPropertyChanged();
+            }
+
+        }
         
         public override Task Initialize()
         {

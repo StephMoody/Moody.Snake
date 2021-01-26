@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +9,10 @@ namespace Moody.Snake.Model
     internal class SnakeLogic
     {
         private Field _activeField;
+        private Field _nextField;
+        private Field _foodField;
         private int _lenght;
+        private Random _random = new Random(DateTime.Now.Millisecond);
         
         public Direction CurrentDirection { get; set; }
 
@@ -22,7 +26,7 @@ namespace Moody.Snake.Model
             
             for (int row = 1; row <= length; row++)
             {
-                for (int column = 1; column < length; column++)
+                for (int column = 1; column <= length; column++)
                 {
                     Field field = new Field();
                     field.Initialize(row, column);
@@ -39,87 +43,126 @@ namespace Moody.Snake.Model
         {
             _activeField = Rows[1].First();
             _activeField.Content = FieldContent.Snake;
-
-            await Task.Delay(1000);
+            RefreshFoodField();
             
             while (Move())
             {
-                await Task.Delay(1000);
+                await Task.Delay(150);
             }
         }
 
         private bool Move()
         {
             _activeField.Content = FieldContent.Empty;
-            
-            var newX = _activeField.PositionX + 1;
-            if (_lenght < newX)
-                return false;
+            MoveResult moveResult = MoveResult.Food;
 
             switch (CurrentDirection)
             {
                 case Direction.Down:
-                    return MoveDown();
+                    moveResult = MoveDown();
+                    break;
                 case Direction.Left:
-                    return  MoveLeft();
+                    moveResult = MoveLeft();
+                    break;
                 case Direction.Right:
-                    return  MoveRight();
+                    moveResult =  MoveRight();
+                    break;
                 case Direction.Up:
-                    return  MoveUp();
+                    moveResult = MoveUp();
+                    break;
                 default:
                     throw new InvalidEnumArgumentException(nameof(CurrentDirection), (int) CurrentDirection,
                         CurrentDirection.GetType());
             }
+
+            switch (moveResult)
+            {
+                case MoveResult.Valid:
+                {
+                    _activeField.Content = FieldContent.Empty;
+                    _activeField = _nextField;
+                    _activeField.Content = FieldContent.Snake;
+                    return true;
+                }
+                case MoveResult.Overlap:
+                    return false;
+                case MoveResult.Food:
+                {
+                    _activeField.Content = FieldContent.Empty;
+                    _activeField = _nextField;
+                    _activeField.Content = FieldContent.Snake;
+                    RefreshFoodField();
+                    return true;
+                }
+                default:
+                    throw new InvalidEnumArgumentException(nameof(moveResult), (int) moveResult,
+                        typeof(MoveResult));
+            }
         }
 
-        private bool MoveUp()
+        private MoveResult MoveUp()
         {
-            Field nextField =
-                Rows.ContainsKey(_activeField.PositionY + 1)
-                    ? Rows[_activeField.PositionY + 1].First(b => b.PositionX == _activeField.PositionX)
-                    : Rows[_lenght - 1].First(b => b.PositionX == _activeField.PositionX);
-            _activeField.Content = FieldContent.Empty;
-            _activeField = nextField;
-            _activeField.Content = FieldContent.Snake;
-
-            return true;
+            _nextField =
+                Rows.ContainsKey(_activeField.Row -1)
+                    ? Rows[_activeField.Row -1].First(b => b.Column == _activeField.Column)
+                    : Rows[_lenght].First(b => b.Column == _activeField.Column);
+            return EnterField();
         }
         
-        private bool MoveDown()
+        private MoveResult MoveDown()
         {
-            Field nextField =
-                Rows.ContainsKey(_activeField.PositionY + 1)
-                    ? Rows[_activeField.PositionY + 1].First(b => b.PositionX == _activeField.PositionX)
-                    : Rows[_lenght - 1].First(b => b.PositionX == _activeField.PositionX);
-            _activeField.Content = FieldContent.Empty;
-            _activeField = nextField;
-            _activeField.Content = FieldContent.Snake;
+            _nextField =
+                Rows.ContainsKey(_activeField.Row + 1)
+                    ? Rows[_activeField.Row + 1].First(b => b.Column == _activeField.Column)
+                    : Rows[1].First(b => b.Column == _activeField.Column);
+            return EnterField();
+        }
+        
+        private MoveResult MoveRight()
+        {
+            _nextField =
+                Rows[_activeField.Row].FirstOrDefault(x => x.Column == _activeField.Column + 1) ??
+                Rows[_activeField.Row][0];
+            return EnterField();
+        }
+
+        private MoveResult MoveLeft()
+        {
+            _nextField =
+                Rows[_activeField.Row].FirstOrDefault(x => x.Column == _activeField.Column - 1) ??
+                Rows[_activeField.Row][_lenght-1];
+            return EnterField();
+        }
+
+        private MoveResult EnterField()
+        {
+            switch (_nextField.Content)
+            {
+                case FieldContent.Fruit:
+                    return MoveResult.Food;
+                case FieldContent.Snake:
+                    return MoveResult.Overlap;
+                case FieldContent.Empty:
+                    return MoveResult.Valid;
+                default:
+                    throw new InvalidEnumArgumentException(nameof(_nextField.Content), (int) _nextField.Content,
+                        typeof(FieldContent));
+            }
+        }
+
+        private void RefreshFoodField()
+        {
+            int foodX = _random.Next(1, _lenght);
+            int foodY = _random.Next(1,_lenght);
             
-            return true;
-        }
-        
-        private bool MoveRight()
-        {
-            Field nextField =
-                Rows[_activeField.PositionX].FirstOrDefault(x => x.PositionY == _activeField.PositionY + 1) ??
-                Rows[_activeField.PositionX][0];
-            _activeField.Content = FieldContent.Empty;
-            _activeField = nextField;
-            _activeField.Content = FieldContent.Snake;
-
-            return true;
-        }
-
-        private bool MoveLeft()
-        {
-            Field nextField =
-                Rows[_activeField.PositionX].FirstOrDefault(x => x.PositionY == _activeField.PositionY - 1) ??
-                Rows[_activeField.PositionX][_lenght-1];
-            _activeField.Content = FieldContent.Empty;
-            _activeField = nextField;
-            _activeField.Content = FieldContent.Snake;
-
-            return true;
+            if(foodX == _activeField.Row && foodY == _activeField.Column)
+            {
+                RefreshFoodField();
+                return;
+            }
+            
+            _foodField = Rows[foodX].Find(b=>b.Column == foodY);
+            _foodField.Content = FieldContent.Fruit;
         }
     }
 }

@@ -5,25 +5,36 @@
     
     
     <converter:FieldContentToFillConverter x:Key="FieldContentToFillConverter"></converter:FieldContentToFillConverter>
-    
-    <DataTemplate x:Key="GameTemplate" DataType="viewModels:GameWindowViewModel">
-        <Canvas ClipToBounds="True">
-            <!-- <TextBlock Text="{Binding Designation}" DockPanel.Dock="Top"  /> -->
-            <ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding RowViewModels}"
-                          ItemTemplate="{DynamicResource RowTemplate }" ItemsPanel="{StaticResource VerticalPanelTemplate}">
 
+    <DataTemplate x:Key="GameTemplate" DataType="{x:Type  viewModels:GameWindowViewModel}">
+        <DockPanel>
+            <ContentControl DockPanel.Dock="Top" 
+                            Content="{Binding GameHeaderViewModel}" 
+                            ContentTemplate="{DynamicResource GameHeader}"></ContentControl>
+            <ItemsControl DockPanel.Dock="Top"
+                          ItemsSource="{Binding RowViewModels}"
+                          ItemTemplate="{DynamicResource RowTemplate }"
+                          ItemsPanel="{StaticResource VerticalPanelTemplate}">
             </ItemsControl>
-        </Canvas>
+        </DockPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GameHeader" DataType="viewModels:GameHeaderViewModel">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Score"></TextBlock>
+            <TextBox Text="{Binding CurrentScore}"></TextBox>
+        </StackPanel>
     </DataTemplate>
     
-    <DataTemplate x:Key="FieldTemplate" DataType="viewModels:FieldViewModel">
-        <Border Background="White" BorderThickness="0.5" >
-            <Rectangle Height="20" Width="20" Fill="{Binding Content, Converter={StaticResource FieldContentToFillConverter}}"></Rectangle>
-        </Border>
+    <DataTemplate x:Key="FieldTemplate" DataType="{x:Type  viewModels:FieldViewModel}">
+        <Rectangle Height="10" Width="10"
+                   Fill="{Binding Content, Converter={StaticResource FieldContentToFillConverter}}">
+        </Rectangle>
     </DataTemplate>
-    
+
     <DataTemplate x:Key="RowTemplate" DataType="viewModels:RowViewModel">
-        <ItemsControl DockPanel.Dock="Top" ItemsSource="{Binding FieldViewModels }"
+        <ItemsControl DockPanel.Dock="Top" 
+                      ItemsSource="{Binding FieldViewModels }"
                       ItemTemplate="{DynamicResource FieldTemplate }"
                       ItemsPanel="{StaticResource HorizontalPanelTemplate}" />
     </DataTemplate>
