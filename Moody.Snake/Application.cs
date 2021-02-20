@@ -15,7 +15,7 @@ namespace Moody.Snake
             ILifetimeScope lifeTimeScope = new ContainerProvider().Build();
             SnakeLogic snakeLogic = lifeTimeScope.Resolve<SnakeLogic>();
             snakeLogic.Initialize(30);
-            IWindowShower<GameWindow, GameWindowViewModel> windowShower = lifeTimeScope.Resolve<IWindowShower<GameWindow, GameWindowViewModel>>();
+            IWindowShower<MainWindow, MainWindowViewModel> windowShower = lifeTimeScope.Resolve<IWindowShower<MainWindow, MainWindowViewModel>>();
             await windowShower.ViewModel.Initialize();
             windowShower.Show();
             

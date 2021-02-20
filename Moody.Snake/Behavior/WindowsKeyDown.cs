@@ -19,10 +19,19 @@ namespace Moody.Snake.Behavior
             AssociatedObject.KeyDown -=AssociatedObjectOnKeyDown;
             base.OnDetaching();
         }
+        
+        public static readonly DependencyProperty EnterPressedProperty = DependencyProperty.Register(
+            "EnterPressed", typeof(bool), typeof(WindowsKeyDown), new PropertyMetadata(default(bool)));
 
+        public bool EnterPressed
+        {
+            get { return (bool) GetValue(EnterPressedProperty); }
+            set { SetValue(EnterPressedProperty, value); }
+        }
+        
         public static readonly DependencyProperty DirectionProperty = DependencyProperty.Register(
             "Direction", typeof(Direction), typeof(WindowsKeyDown), new PropertyMetadata(default(Direction)));
-
+        
         public Direction Direction
         {
             get { return (Direction) GetValue(DirectionProperty); }
@@ -45,7 +54,11 @@ namespace Moody.Snake.Behavior
                 case Key.Right:
                     Direction = Direction.Right;
                     break;
+                case Key.Enter:
+                    EnterPressed = true;
+                    break;
             }
         }
+        
     }
 }

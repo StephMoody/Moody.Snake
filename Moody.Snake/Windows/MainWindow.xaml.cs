@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Interop;
 
 namespace Moody.Snake.Windows
 {
-    public partial class GameWindow : Window
+    public partial class MainWindow : Window
     {
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
@@ -14,7 +15,7 @@ namespace Moody.Snake.Windows
         [DllImport("user32.dll")]
         private static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
         
-        public GameWindow()
+        public MainWindow()
         {
             InitializeComponent();
         }

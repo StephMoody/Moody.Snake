@@ -1,28 +1,26 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewModels="clr-namespace:Moody.Snake.ViewModels"
-                    xmlns:converter="clr-namespace:Moody.Snake.Converter">
+                    xmlns:converter="clr-namespace:Moody.Snake.Converter"
+                    xmlns:windows="clr-namespace:Moody.Snake.Windows"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:behavior="clr-namespace:Moody.Snake.Behavior">
     
     
     <converter:FieldContentToFillConverter x:Key="FieldContentToFillConverter"></converter:FieldContentToFillConverter>
 
-    <DataTemplate x:Key="GameTemplate" DataType="{x:Type  viewModels:GameWindowViewModel}">
-        <DockPanel>
-            <ContentControl DockPanel.Dock="Top" 
-                            Content="{Binding GameHeaderViewModel}" 
-                            ContentTemplate="{DynamicResource GameHeader}"></ContentControl>
-            <ItemsControl DockPanel.Dock="Top"
-                          ItemsSource="{Binding RowViewModels}"
-                          ItemTemplate="{DynamicResource RowTemplate }"
-                          ItemsPanel="{StaticResource VerticalPanelTemplate}">
-            </ItemsControl>
-        </DockPanel>
+    <DataTemplate x:Key="StartViewTemplate" DataType="{x:Type viewModels:MainWindowViewModel}">
+        <windows:StartView/>
     </DataTemplate>
-
+ 
+    <DataTemplate x:Key="GameViewTemplate" DataType="{x:Type viewModels:MainWindowViewModel}">
+        <windows:GameView DataContext="{Binding GameViewViewModel}"></windows:GameView>
+    </DataTemplate>
+    
     <DataTemplate x:Key="GameHeader" DataType="viewModels:GameHeaderViewModel">
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Score"></TextBlock>
-            <TextBox Text="{Binding CurrentScore}"></TextBox>
+            <TextBox Text="{Binding CurrentScore, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
     </DataTemplate>
     

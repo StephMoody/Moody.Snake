@@ -10,6 +10,10 @@
         <e p="Autofac" t="Include">
           <e p="Registrator.cs" t="Include" />
         </e>
+        <e p="Base" t="Include">
+          <e p="UpdateableProperty.cs" t="Include" />
+          <e p="ValueChangedEventArgs.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Contracts" t="Include">
           <e p="IInitializable.cs" t="Include" />
@@ -81,7 +85,9 @@
             <e p="App.g.cs" t="Include" />
             <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
             <e p="Windows" t="Include">
-              <e p="GameWindow.g.cs" t="Include" />
+              <e p="GameView.g.cs" t="Include" />
+              <e p="MainWindow.g.cs" t="Include" />
+              <e p="StartView.g.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -97,12 +103,17 @@
         <e p="ViewModels" t="Include">
           <e p="FieldViewModel.cs" t="Include" />
           <e p="GameHeaderViewModel.cs" t="Include" />
-          <e p="GameWindowViewModel.cs" t="Include" />
+          <e p="GameViewViewModel.cs" t="Include" />
+          <e p="MainWindowViewModel.cs" t="Include" />
           <e p="RowViewModel.cs" t="Include" />
         </e>
         <e p="Windows" t="Include">
-          <e p="GameWindow.xaml" t="Include" />
-          <e p="GameWindow.xaml.cs" t="Include" />
+          <e p="GameView.xaml" t="Include" />
+          <e p="GameView.xaml.cs" t="Include" />
+          <e p="MainWindow.xaml" t="Include" />
+          <e p="MainWindow.xaml.cs" t="Include" />
+          <e p="StartView.xaml" t="Include" />
+          <e p="StartView.xaml.cs" t="Include" />
         </e>
       </e>
       <e p="Moody.Snake.sln" t="IncludeFlat" />

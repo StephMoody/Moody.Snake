@@ -11,11 +11,13 @@ namespace Moody.Snake.Autofac
         public ILifetimeScope Build()
         {
             ContainerBuilder containerBuilder = new ContainerBuilder();
-            containerBuilder.RegisterType<GameWindowViewModel>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<GameViewViewModel>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<MainWindowViewModel>().AsSelf().SingleInstance();
             containerBuilder.RegisterType<GameHeaderViewModel>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<GameView>().AsSelf().ForViewModel(typeof(MainWindowViewModel));
             containerBuilder.RegisterType<RowViewModel>().AsSelf().InstancePerDependency();
             containerBuilder.RegisterType<FieldViewModel>().AsSelf().InstancePerDependency();
-            containerBuilder.RegisterType<GameWindow>().AsSelf().ForViewModel(typeof(GameWindowViewModel));
+            containerBuilder.RegisterType<MainWindow>().AsSelf().ForViewModel(typeof(GameViewViewModel));
             containerBuilder.RegisterType<SnakeLogic>().AsSelf().SingleInstance();
             
             Registrator.RegisterTypes(containerBuilder);

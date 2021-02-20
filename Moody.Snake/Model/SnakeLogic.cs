@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using Moody.Common.Base;
+using Moody.Common.Extensions;
 
 namespace Moody.Snake.Model
 {
@@ -12,9 +14,11 @@ namespace Moody.Snake.Model
         private Field _nextField;
         private Field _foodField;
         private int _lenght;
-        private Random _random = new Random(DateTime.Now.Millisecond);
+        private readonly Random _random = new Random(DateTime.Now.Millisecond);
         
         public Direction CurrentDirection { get; set; }
+
+        public UpdateableProperty<int> Score = new UpdateableProperty<int>();
 
         public Dictionary<int, List<Field>> Rows { get; } = new Dictionary<int, List<Field>>();
 
@@ -23,6 +27,7 @@ namespace Moody.Snake.Model
 
             CurrentDirection = Direction.Right;
             _lenght = length;
+            Score.Value = 0;
             
             for (int row = 1; row <= length; row++)
             {
@@ -43,7 +48,7 @@ namespace Moody.Snake.Model
         {
             _activeField = Rows[1].First();
             _activeField.Content = FieldContent.Snake;
-            RefreshFoodField();
+            await RefreshFoodField();
             
             while (Move())
             {
@@ -54,7 +59,7 @@ namespace Moody.Snake.Model
         private bool Move()
         {
             _activeField.Content = FieldContent.Empty;
-            MoveResult moveResult = MoveResult.Food;
+            MoveResult moveResult;
 
             switch (CurrentDirection)
             {
@@ -91,7 +96,8 @@ namespace Moody.Snake.Model
                     _activeField.Content = FieldContent.Empty;
                     _activeField = _nextField;
                     _activeField.Content = FieldContent.Snake;
-                    RefreshFoodField();
+                    Score.Value++;
+                    RefreshFoodField().FireAndForgetAsync(null);
                     return true;
                 }
                 default:
@@ -150,14 +156,16 @@ namespace Moody.Snake.Model
             }
         }
 
-        private void RefreshFoodField()
+        private async Task RefreshFoodField()
         {
+            await Task.Delay(1000);
+            
             int foodX = _random.Next(1, _lenght);
             int foodY = _random.Next(1,_lenght);
             
             if(foodX == _activeField.Row && foodY == _activeField.Column)
             {
-                RefreshFoodField();
+                await RefreshFoodField();
                 return;
             }
             

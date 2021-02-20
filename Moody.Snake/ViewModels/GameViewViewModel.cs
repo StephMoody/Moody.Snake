@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Moody.Common.Base;
 using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
 using Moody.Snake.Model;
 
 namespace Moody.Snake.ViewModels
 {
-    internal class GameWindowViewModel : ViewModelBase
+    internal class GameViewViewModel : ViewModelBase
     {
         private readonly Func<RowViewModel> _rowViewModelCreator;
         private readonly SnakeLogic _snakeLogic;
         private readonly GameHeaderViewModel _gameHeaderViewModel;
          
-        public GameWindowViewModel(ILogManager logManager, Func<RowViewModel> rowViewModelCreator, SnakeLogic snakeLogic, GameHeaderViewModel gameHeaderViewModel) : base(logManager)
+        public GameViewViewModel(ILogManager logManager, Func<RowViewModel> rowViewModelCreator, SnakeLogic snakeLogic, GameHeaderViewModel gameHeaderViewModel) : base(logManager)
         {
             _rowViewModelCreator = rowViewModelCreator;
             _snakeLogic = snakeLogic;
@@ -22,7 +23,7 @@ namespace Moody.Snake.ViewModels
         }
 
         public ObservableCollection<RowViewModel> RowViewModels { get; } = new ObservableCollection<RowViewModel>();
-
+        
         public GameHeaderViewModel GameHeaderViewModel => _gameHeaderViewModel;
 
         public Direction CurrentDirection
@@ -44,6 +45,8 @@ namespace Moody.Snake.ViewModels
                 newRowViewModel.Initialize(snakeLogicRow.Key, snakeLogicRow.Value);
                 RowViewModels.Add(newRowViewModel);
             }
+
+            _gameHeaderViewModel.Initialize();
             
             OnPropertyChanged(nameof(RowViewModels));
             return Task.CompletedTask;

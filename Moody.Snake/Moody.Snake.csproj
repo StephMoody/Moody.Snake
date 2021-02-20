@@ -105,11 +105,14 @@
         <Compile Include="Model\SnakeLogic.cs" />
         <Compile Include="ViewModels\FieldViewModel.cs" />
         <Compile Include="ViewModels\GameHeaderViewModel.cs" />
-        <Compile Include="ViewModels\GameWindowViewModel.cs" />
+        <Compile Include="ViewModels\MainWindowViewModel.cs" />
+        <Compile Include="ViewModels\GameViewViewModel.cs" />
         <Compile Include="ViewModels\RowViewModel.cs" />
-        <Compile Include="Windows\GameWindow.xaml.cs">
-          <DependentUpon>GameWindow.xaml</DependentUpon>
+        <Compile Include="Windows\GameView.xaml.cs" />
+        <Compile Include="Windows\MainWindow.xaml.cs">
+          <DependentUpon>MainWindow.xaml</DependentUpon>
         </Compile>
+        <Compile Include="Windows\StartView.xaml.cs" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Application.cs" />
@@ -147,7 +150,9 @@
     </ItemGroup>
     <ItemGroup>
       <Page Include="Resources\GameResources.xaml" />
-      <Page Include="Windows\GameWindow.xaml" />
+      <Page Include="Windows\MainWindow.xaml" />
+      <Page Include="Windows\GameView.xaml" />
+      <Page Include="Windows\StartView.xaml" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
