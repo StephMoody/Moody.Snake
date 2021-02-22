@@ -38,6 +38,10 @@
           <HintPath>..\packages\Autofac.6.1.0\lib\netstandard2.0\Autofac.dll</HintPath>
           <Private>True</Private>
         </Reference>
+        <Reference Include="JetBrains.Annotations, Version=2021.1.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325">
+          <HintPath>..\packages\JetBrains.Annotations.2021.1.0-eap01\lib\net20\JetBrains.Annotations.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
           <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
           <Private>True</Private>
@@ -97,17 +101,20 @@
             <SubType>Code</SubType>
         </Compile>
         <Compile Include="Behavior\WindowsKeyDown.cs" />
+        <Compile Include="Converter\BoolToVisibilityConverter.cs" />
         <Compile Include="Converter\FieldContentToFillConverter.cs" />
         <Compile Include="Model\Direction.cs" />
         <Compile Include="Model\Field.cs" />
         <Compile Include="Model\FieldContent.cs" />
         <Compile Include="Model\MoveResult.cs" />
         <Compile Include="Model\SnakeLogic.cs" />
-        <Compile Include="ViewModels\FieldViewModel.cs" />
-        <Compile Include="ViewModels\GameHeaderViewModel.cs" />
+        <Compile Include="ViewModels\Game\FieldViewModel.cs" />
+        <Compile Include="ViewModels\Game\GameHeaderViewModel.cs" />
+        <Compile Include="ViewModels\Game\GameViewViewModel.cs" />
+        <Compile Include="ViewModels\Game\RowViewModel.cs" />
         <Compile Include="ViewModels\MainWindowViewModel.cs" />
-        <Compile Include="ViewModels\GameViewViewModel.cs" />
-        <Compile Include="ViewModels\RowViewModel.cs" />
+        <Compile Include="ViewModels\Mode.cs" />
+        <Compile Include="ViewModels\StartViewViewModel.cs" />
         <Compile Include="Windows\GameView.xaml.cs" />
         <Compile Include="Windows\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>

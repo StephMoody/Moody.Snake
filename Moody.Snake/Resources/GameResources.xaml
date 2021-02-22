@@ -4,33 +4,36 @@
                     xmlns:converter="clr-namespace:Moody.Snake.Converter"
                     xmlns:windows="clr-namespace:Moody.Snake.Windows"
                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-                    xmlns:behavior="clr-namespace:Moody.Snake.Behavior">
+                    xmlns:behavior="clr-namespace:Moody.Snake.Behavior"
+                    xmlns:game="clr-namespace:Moody.Snake.ViewModels.Game">
     
     
     <converter:FieldContentToFillConverter x:Key="FieldContentToFillConverter"></converter:FieldContentToFillConverter>
+    <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"></converter:BoolToVisibilityConverter>
+    
 
-    <DataTemplate x:Key="StartViewTemplate" DataType="{x:Type viewModels:MainWindowViewModel}">
+    <DataTemplate DataType="{x:Type viewModels:StartViewViewModel}">
         <windows:StartView/>
     </DataTemplate>
  
-    <DataTemplate x:Key="GameViewTemplate" DataType="{x:Type viewModels:MainWindowViewModel}">
-        <windows:GameView DataContext="{Binding GameViewViewModel}"></windows:GameView>
+    <DataTemplate DataType="{x:Type game:GameViewViewModel}">
+        <windows:GameView DataContext="{Binding}"></windows:GameView>
     </DataTemplate>
     
-    <DataTemplate x:Key="GameHeader" DataType="viewModels:GameHeaderViewModel">
+    <DataTemplate x:Key="GameHeader" DataType="game:GameHeaderViewModel">
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="Score"></TextBlock>
             <TextBox Text="{Binding CurrentScore, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
     </DataTemplate>
     
-    <DataTemplate x:Key="FieldTemplate" DataType="{x:Type  viewModels:FieldViewModel}">
+    <DataTemplate x:Key="FieldTemplate" DataType="{x:Type  game:FieldViewModel}">
         <Rectangle Height="10" Width="10"
                    Fill="{Binding Content, Converter={StaticResource FieldContentToFillConverter}}">
         </Rectangle>
     </DataTemplate>
 
-    <DataTemplate x:Key="RowTemplate" DataType="viewModels:RowViewModel">
+    <DataTemplate x:Key="RowTemplate" DataType="game:RowViewModel">
         <ItemsControl DockPanel.Dock="Top" 
                       ItemsSource="{Binding FieldViewModels }"
                       ItemTemplate="{DynamicResource FieldTemplate }"

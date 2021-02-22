@@ -5,7 +5,7 @@ using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
 using Moody.Snake.Model;
 
-namespace Moody.Snake.ViewModels
+namespace Moody.Snake.ViewModels.Game
 {
     internal class RowViewModel : ViewModelBase
     {

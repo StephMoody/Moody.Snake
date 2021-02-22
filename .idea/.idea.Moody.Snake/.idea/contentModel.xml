@@ -70,6 +70,7 @@
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Converter" t="Include">
+          <e p="BoolToVisibilityConverter.cs" t="Include" />
           <e p="FieldContentToFillConverter.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
@@ -101,11 +102,15 @@
           <e p="GameResources.xaml" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
-          <e p="FieldViewModel.cs" t="Include" />
-          <e p="GameHeaderViewModel.cs" t="Include" />
-          <e p="GameViewViewModel.cs" t="Include" />
+          <e p="Game" t="Include">
+            <e p="FieldViewModel.cs" t="Include" />
+            <e p="GameHeaderViewModel.cs" t="Include" />
+            <e p="GameViewViewModel.cs" t="Include" />
+            <e p="RowViewModel.cs" t="Include" />
+          </e>
           <e p="MainWindowViewModel.cs" t="Include" />
-          <e p="RowViewModel.cs" t="Include" />
+          <e p="Mode.cs" t="Include" />
+          <e p="StartViewViewModel.cs" t="Include" />
         </e>
         <e p="Windows" t="Include">
           <e p="GameView.xaml" t="Include" />

@@ -6,28 +6,25 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:behavior="clr-namespace:Moody.Snake.Behavior"
         mc:Ignorable="d"
-        Title="Snake 🐍" SizeToContent="WidthAndHeight"
+        Title="Snake 🐍" 
+        Width="500"
+        Height="500"
         WindowStyle="ToolWindow"
         Loaded="GameWindow_OnLoaded">
         <Window.Resources>
+                
                 <ResourceDictionary Source="../Resources/GameResources.xaml"></ResourceDictionary>
         </Window.Resources>
         <i:Interaction.Behaviors>
-                <behavior:WindowsKeyDown Direction="{Binding GameViewViewModel.CurrentDirection, Mode=TwoWay}"  EnterPressed="{Binding EnterPressed, Mode=TwoWay}"></behavior:WindowsKeyDown>
+                <behavior:WindowsKeyDown OnKeyDownAction="{Binding OnKeyDownAction}"></behavior:WindowsKeyDown>
         </i:Interaction.Behaviors>
-        <DockPanel>
-                <ContentControl Content="{Binding }">
-                        <ContentControl.Style>
-                                <Style TargetType="{x:Type ContentControl}">
-                                        <Setter Property="ContentTemplate" Value="{StaticResource  StartViewTemplate}" />
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding EnterPressed}" Value="true">
-                                                    <Setter Property="ContentTemplate" Value="{StaticResource  GameViewTemplate}" />
-                                                    <Setter Property="Content" Value="{Binding }"></Setter>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                </Style>
-                        </ContentControl.Style>
-                </ContentControl>
-        </DockPanel>
+        <Window.Style>
+                <Style TargetType="Window">
+                        <Setter Property="Background" Value="Black"></Setter>
+                </Style>
+        </Window.Style>
+        <Grid>
+                <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding ContentViewModel}"/>
+                <Rectangle Fill="HotPink" Opacity="0.5" Visibility="{Binding GameViewViewModel.IsPaused, Converter={StaticResource BoolToVisibilityConverter}}"></Rectangle>
+        </Grid>
 </Window>

@@ -15,6 +15,7 @@ namespace Moody.Snake.Model
         private Field _foodField;
         private int _lenght;
         private readonly Random _random = new Random(DateTime.Now.Millisecond);
+        private bool _isPaused;
         
         public Direction CurrentDirection { get; set; }
 
@@ -56,8 +57,17 @@ namespace Moody.Snake.Model
             }
         }
 
+        public bool IsPaused
+        {
+            get => _isPaused;
+            set => _isPaused = value;
+        }
+
         private bool Move()
         {
+            if (_isPaused)
+                return true;
+            
             _activeField.Content = FieldContent.Empty;
             MoveResult moveResult;
 

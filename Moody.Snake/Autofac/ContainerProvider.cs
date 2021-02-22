@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Moody.Snake.Model;
 using Moody.Snake.ViewModels;
+using Moody.Snake.ViewModels.Game;
 using Moody.Snake.Windows;
 using Moody.UI.Autofac;
 
@@ -13,6 +14,7 @@ namespace Moody.Snake.Autofac
             ContainerBuilder containerBuilder = new ContainerBuilder();
             containerBuilder.RegisterType<GameViewViewModel>().AsSelf().SingleInstance();
             containerBuilder.RegisterType<MainWindowViewModel>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<StartViewViewModel>().AsSelf().SingleInstance();
             containerBuilder.RegisterType<GameHeaderViewModel>().AsSelf().SingleInstance();
             containerBuilder.RegisterType<GameView>().AsSelf().ForViewModel(typeof(MainWindowViewModel));
             containerBuilder.RegisterType<RowViewModel>().AsSelf().InstancePerDependency();

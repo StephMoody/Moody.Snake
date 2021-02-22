@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using Moody.Common.Base;
+using System.Windows.Input;
 using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
 using Moody.Snake.Model;
 
-namespace Moody.Snake.ViewModels
+namespace Moody.Snake.ViewModels.Game
 {
     internal class GameViewViewModel : ViewModelBase
     {
@@ -50,6 +50,31 @@ namespace Moody.Snake.ViewModels
             
             OnPropertyChanged(nameof(RowViewModels));
             return Task.CompletedTask;
+        }
+
+        public bool IsPaused => _snakeLogic.IsPaused;
+
+        public void HandleKeyDown(Key key)
+        {
+            switch (key)
+            {
+                case Key.Escape:
+                    _snakeLogic.IsPaused = !_snakeLogic.IsPaused;
+                    OnPropertyChanged(nameof(IsPaused));
+                    break;
+                case Key.Up:
+                    CurrentDirection = Direction.Up;
+                    break;
+                case Key.Down:
+                    CurrentDirection = Direction.Down;
+                    break;
+                case Key.Left:
+                    CurrentDirection = Direction.Left;
+                    break;
+                case Key.Right:
+                    CurrentDirection = Direction.Right;
+                    break;
+            }
         }
     }
 }
