@@ -14,7 +14,8 @@ namespace Moody.Snake.ViewModels.Game
         private readonly Func<RowViewModel> _rowViewModelCreator;
         private readonly SnakeLogic _snakeLogic;
         private readonly GameHeaderViewModel _gameHeaderViewModel;
-         
+        private Action _onCloseWindow;
+
         public GameViewViewModel(ILogManager logManager, Func<RowViewModel> rowViewModelCreator, SnakeLogic snakeLogic, GameHeaderViewModel gameHeaderViewModel) : base(logManager)
         {
             _rowViewModelCreator = rowViewModelCreator;
@@ -25,6 +26,14 @@ namespace Moody.Snake.ViewModels.Game
         public ObservableCollection<RowViewModel> RowViewModels { get; } = new ObservableCollection<RowViewModel>();
         
         public GameHeaderViewModel GameHeaderViewModel => _gameHeaderViewModel;
+
+        public int AnyInt { get; set; }
+
+        public Action OnCloseWindow
+        {
+            private get => _onCloseWindow;
+            set => _onCloseWindow = value;
+        }
 
         public Direction CurrentDirection
         {
@@ -58,10 +67,13 @@ namespace Moody.Snake.ViewModels.Game
         {
             switch (key)
             {
-                case Key.Escape:
+                case Key.P:
                     _snakeLogic.IsPaused = !_snakeLogic.IsPaused;
                     OnPropertyChanged(nameof(IsPaused));
                     break;
+                case Key.Escape:
+                    _onCloseWindow();
+                    return;
                 case Key.Up:
                     CurrentDirection = Direction.Up;
                     break;

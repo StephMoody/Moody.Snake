@@ -66,6 +66,7 @@
           <e p="ContainerProvider.cs" t="Include" />
         </e>
         <e p="Behavior" t="Include">
+          <e p="CloseWindowBehavior.cs" t="Include" />
           <e p="WindowsKeyDown.cs" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />

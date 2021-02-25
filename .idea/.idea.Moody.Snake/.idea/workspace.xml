@@ -6,25 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9efdbcd2-e653-424e-837a-471b80243db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/Converter/BoolToVisibilityConverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/StartViewViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Moody.Snake/Behavior/CloseWindowBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Autofac/ContainerProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Autofac/ContainerProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Moody.Snake/Behavior/WindowsKeyDown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Behavior/WindowsKeyDown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Moody.Snake/Moody.Snake.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Moody.Snake.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Resources/GameResources.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Resources/GameResources.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/FieldViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/FieldViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/GameHeaderViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameHeaderViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/GameViewViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/RowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/RowViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Windows/GameView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Windows/GameView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Moody.Snake/Windows/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Windows/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Windows/StartView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Windows/StartView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/packages.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,13 +73,15 @@
       <option value="$PROJECT_DIR$/Moody.Snake/Windows/GameView.xaml" />
       <option value="$PROJECT_DIR$/Moody.Snake/Windows/StartView.xaml" />
       <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Behavior/WindowsKeyDown.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Converter/BoolToVisibilityConverter.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/Resources/GameResources.xaml" />
       <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Converter/BoolToVisibilityConverter.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Behavior/WindowsKeyDown.cs" />
+      <option value="$PROJECT_DIR$/Moody.MVVM.Base/Behavior/CloseWindowBehavior.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/Windows/MainWindow.xaml" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Behavior/CloseWindowBehavior.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mKTn930ThKPwPN3AcM0ygPKmZ9" />
@@ -104,7 +94,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34985423" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35012385" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -168,7 +158,8 @@
       <workItem from="1612810476024" duration="2655000" />
       <workItem from="1613214919176" duration="7662000" />
       <workItem from="1613810194941" duration="4663000" />
-      <workItem from="1614022610465" duration="2628000" />
+      <workItem from="1614022610465" duration="2862000" />
+      <workItem from="1614283278756" duration="2072000" />
     </task>
     <task id="LOCAL-00001" summary="updated SnakeLogic!">
       <created>1609323875679</created>
@@ -191,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613812537788</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="introducing pause-mode!">
+      <created>1614025491329</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1614025491329</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
@@ -243,7 +241,8 @@
     <MESSAGE value="updated SnakeLogic!" />
     <MESSAGE value="added fruits and updated move logic!" />
     <MESSAGE value="added startscreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="added startscreen" />
+    <MESSAGE value="introducing pause-mode!" />
+    <option name="LAST_COMMIT_MESSAGE" value="introducing pause-mode!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
