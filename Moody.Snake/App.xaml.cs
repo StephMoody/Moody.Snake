@@ -12,6 +12,8 @@ namespace Moody.Snake
         {
             try
             {
+                
+                
                 await Application.Run();
             }
             catch (Exception exception)

@@ -1,5 +1,7 @@
 ﻿using Autofac;
+using Moody.Common.Contracts;
 using Moody.Snake.Model;
+using Moody.Snake.Model.News;
 using Moody.Snake.ViewModels;
 using Moody.Snake.ViewModels.Game;
 using Moody.Snake.Windows;
@@ -21,6 +23,9 @@ namespace Moody.Snake.Autofac
             containerBuilder.RegisterType<FieldViewModel>().AsSelf().InstancePerDependency();
             containerBuilder.RegisterType<MainWindow>().AsSelf().ForViewModel(typeof(GameViewViewModel));
             containerBuilder.RegisterType<SnakeLogic>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<MoveLogic>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<NewsFeed>().AsSelf().As<INewsFeed>().As<IInitializable>().SingleInstance();
+            containerBuilder.RegisterType<PauseViewModel>().AsSelf();
             
             Registrator.RegisterTypes(containerBuilder);
             Common.Autofac.Registrator.RegisterTypes(containerBuilder);

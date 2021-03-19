@@ -10,16 +10,23 @@ namespace Moody.Snake.Model
 {
     internal class SnakeLogic
     {
-        private Field _activeField;
+        private Field _activeSnakeHeaderField;
         private Field _nextField;
         private Field _foodField;
         private int _lenght;
         private readonly Random _random = new Random(DateTime.Now.Millisecond);
+        private readonly MoveLogic _moveLogic;
         private bool _isPaused;
+        private List<Field> _snake = new List<Field>();
         
         public Direction CurrentDirection { get; set; }
 
         public UpdateableProperty<int> Score = new UpdateableProperty<int>();
+
+        public SnakeLogic(MoveLogic moveLogic)
+        {
+            _moveLogic = moveLogic;
+        }
 
         public Dictionary<int, List<Field>> Rows { get; } = new Dictionary<int, List<Field>>();
 
@@ -47,8 +54,11 @@ namespace Moody.Snake.Model
         
         public async Task Start()
         {
-            _activeField = Rows[1].First();
-            _activeField.Content = FieldContent.Snake;
+            _snake.Add(Rows[1].First());
+            _snake.Add(Rows[1].First());
+            _snake.Add(Rows[1].First());
+            _activeSnakeHeaderField = Rows[1].First();
+            _activeSnakeHeaderField.Content = FieldContent.Snake;
             await RefreshFoodField();
             
             while (Move())
@@ -68,45 +78,45 @@ namespace Moody.Snake.Model
             if (_isPaused)
                 return true;
             
-            _activeField.Content = FieldContent.Empty;
-            MoveResult moveResult;
+            _activeSnakeHeaderField.Content = FieldContent.Empty;
+            Field lastFieldOfOldSnakePositions = _snake[_snake.Count-1];
+            _snake = _moveLogic.CalculateNextField(_snake).ToList();
+            _nextField = _snake.First();
+            MoveResult moveResult = EnterField();
 
-            switch (CurrentDirection)
-            {
-                case Direction.Down:
-                    moveResult = MoveDown();
-                    break;
-                case Direction.Left:
-                    moveResult = MoveLeft();
-                    break;
-                case Direction.Right:
-                    moveResult =  MoveRight();
-                    break;
-                case Direction.Up:
-                    moveResult = MoveUp();
-                    break;
-                default:
-                    throw new InvalidEnumArgumentException(nameof(CurrentDirection), (int) CurrentDirection,
-                        CurrentDirection.GetType());
-            }
+            return ProcessMoveResult(moveResult, lastFieldOfOldSnakePositions);
+        }
 
+        private bool ProcessMoveResult(MoveResult moveResult, Field lastFieldOfOldSnakePositions)
+        {
             switch (moveResult)
             {
                 case MoveResult.Valid:
                 {
-                    _activeField.Content = FieldContent.Empty;
-                    _activeField = _nextField;
-                    _activeField.Content = FieldContent.Snake;
+                    lastFieldOfOldSnakePositions.Content = FieldContent.Empty;
+                    _activeSnakeHeaderField = _nextField;
+                    foreach (Field field in _snake)
+                    {
+                        field.Content = FieldContent.Snake;
+                    }
+
                     return true;
                 }
                 case MoveResult.Overlap:
                     return false;
                 case MoveResult.Food:
                 {
-                    _activeField.Content = FieldContent.Empty;
-                    _activeField = _nextField;
-                    _activeField.Content = FieldContent.Snake;
+                    lastFieldOfOldSnakePositions.Content = FieldContent.Empty;
+                    _activeSnakeHeaderField.Content = FieldContent.Empty;
+                    _activeSnakeHeaderField = _nextField;
+                    _activeSnakeHeaderField.Content = FieldContent.Snake;
                     Score.Value++;
+                    _snake.Add(_snake.Last());
+                    foreach (Field field in _snake)
+                    {
+                        field.Content = FieldContent.Snake;
+                    }
+
                     RefreshFoodField().FireAndForgetAsync(null);
                     return true;
                 }
@@ -114,40 +124,6 @@ namespace Moody.Snake.Model
                     throw new InvalidEnumArgumentException(nameof(moveResult), (int) moveResult,
                         typeof(MoveResult));
             }
-        }
-
-        private MoveResult MoveUp()
-        {
-            _nextField =
-                Rows.ContainsKey(_activeField.Row -1)
-                    ? Rows[_activeField.Row -1].First(b => b.Column == _activeField.Column)
-                    : Rows[_lenght].First(b => b.Column == _activeField.Column);
-            return EnterField();
-        }
-        
-        private MoveResult MoveDown()
-        {
-            _nextField =
-                Rows.ContainsKey(_activeField.Row + 1)
-                    ? Rows[_activeField.Row + 1].First(b => b.Column == _activeField.Column)
-                    : Rows[1].First(b => b.Column == _activeField.Column);
-            return EnterField();
-        }
-        
-        private MoveResult MoveRight()
-        {
-            _nextField =
-                Rows[_activeField.Row].FirstOrDefault(x => x.Column == _activeField.Column + 1) ??
-                Rows[_activeField.Row][0];
-            return EnterField();
-        }
-
-        private MoveResult MoveLeft()
-        {
-            _nextField =
-                Rows[_activeField.Row].FirstOrDefault(x => x.Column == _activeField.Column - 1) ??
-                Rows[_activeField.Row][_lenght-1];
-            return EnterField();
         }
 
         private MoveResult EnterField()
@@ -173,7 +149,7 @@ namespace Moody.Snake.Model
             int foodX = _random.Next(1, _lenght);
             int foodY = _random.Next(1,_lenght);
             
-            if(foodX == _activeField.Row && foodY == _activeField.Column)
+            if(foodX == _activeSnakeHeaderField.Row && foodY == _activeSnakeHeaderField.Column)
             {
                 await RefreshFoodField();
                 return;

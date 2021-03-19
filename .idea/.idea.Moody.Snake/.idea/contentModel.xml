@@ -78,7 +78,13 @@
           <e p="Direction.cs" t="Include" />
           <e p="Field.cs" t="Include" />
           <e p="FieldContent.cs" t="Include" />
+          <e p="MoveLogic.cs" t="Include" />
           <e p="MoveResult.cs" t="Include" />
+          <e p="News" t="Include">
+            <e p="INewsFeed.cs" t="Include" />
+            <e p="NewsFeed.cs" t="Include" />
+            <e p="NewsItem.cs" t="Include" />
+          </e>
           <e p="SnakeLogic.cs" t="Include" />
         </e>
         <e p="Moody.Snake.csproj" t="IncludeRecursive" />
@@ -107,6 +113,7 @@
             <e p="FieldViewModel.cs" t="Include" />
             <e p="GameHeaderViewModel.cs" t="Include" />
             <e p="GameViewViewModel.cs" t="Include" />
+            <e p="PauseViewModel.cs" t="Include" />
             <e p="RowViewModel.cs" t="Include" />
           </e>
           <e p="MainWindowViewModel.cs" t="Include" />

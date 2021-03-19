@@ -75,6 +75,12 @@
           <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
           <Private>True</Private>
         </Reference>
+        <Reference Include="System.Runtime.Serialization" />
+        <Reference Include="System.ServiceModel" />
+        <Reference Include="System.ServiceModel.Syndication, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+          <HintPath>..\packages\System.ServiceModel.Syndication.6.0.0-preview.1.21102.12\lib\net461\System.ServiceModel.Syndication.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
           <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
           <Private>True</Private>
@@ -107,11 +113,16 @@
         <Compile Include="Model\Direction.cs" />
         <Compile Include="Model\Field.cs" />
         <Compile Include="Model\FieldContent.cs" />
+        <Compile Include="Model\MoveLogic.cs" />
         <Compile Include="Model\MoveResult.cs" />
+        <Compile Include="Model\News\INewsFeed.cs" />
+        <Compile Include="Model\News\NewsFeed.cs" />
+        <Compile Include="Model\News\NewsItem.cs" />
         <Compile Include="Model\SnakeLogic.cs" />
         <Compile Include="ViewModels\Game\FieldViewModel.cs" />
         <Compile Include="ViewModels\Game\GameHeaderViewModel.cs" />
         <Compile Include="ViewModels\Game\GameViewViewModel.cs" />
+        <Compile Include="ViewModels\Game\PauseViewModel.cs" />
         <Compile Include="ViewModels\Game\RowViewModel.cs" />
         <Compile Include="ViewModels\MainWindowViewModel.cs" />
         <Compile Include="ViewModels\Mode.cs" />

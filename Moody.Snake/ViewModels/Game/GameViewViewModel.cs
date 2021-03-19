@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Moody.Common.Contracts;
+using Moody.Common.Extensions;
 using Moody.MVVM.Base.ViewModel;
 using Moody.Snake.Model;
 
@@ -16,19 +17,20 @@ namespace Moody.Snake.ViewModels.Game
         private readonly GameHeaderViewModel _gameHeaderViewModel;
         private Action _onCloseWindow;
 
-        public GameViewViewModel(ILogManager logManager, Func<RowViewModel> rowViewModelCreator, SnakeLogic snakeLogic, GameHeaderViewModel gameHeaderViewModel) : base(logManager)
+        public GameViewViewModel(ILogManager logManager, Func<RowViewModel> rowViewModelCreator, SnakeLogic snakeLogic, GameHeaderViewModel gameHeaderViewModel, PauseViewModel pauseViewModel) : base(logManager)
         {
             _rowViewModelCreator = rowViewModelCreator;
             _snakeLogic = snakeLogic;
             _gameHeaderViewModel = gameHeaderViewModel;
+            PauseViewModel = pauseViewModel;
         }
+
+        public PauseViewModel PauseViewModel { get; }
 
         public ObservableCollection<RowViewModel> RowViewModels { get; } = new ObservableCollection<RowViewModel>();
         
         public GameHeaderViewModel GameHeaderViewModel => _gameHeaderViewModel;
-
-        public int AnyInt { get; set; }
-
+        
         public Action OnCloseWindow
         {
             private get => _onCloseWindow;
@@ -68,8 +70,7 @@ namespace Moody.Snake.ViewModels.Game
             switch (key)
             {
                 case Key.P:
-                    _snakeLogic.IsPaused = !_snakeLogic.IsPaused;
-                    OnPropertyChanged(nameof(IsPaused));
+                    ExecutePauseHandling();
                     break;
                 case Key.Escape:
                     _onCloseWindow();
@@ -87,6 +88,18 @@ namespace Moody.Snake.ViewModels.Game
                     CurrentDirection = Direction.Right;
                     break;
             }
+        }
+
+        private void ExecutePauseHandling()
+        {
+            _snakeLogic.IsPaused = !_snakeLogic.IsPaused;
+            if(_snakeLogic.IsPaused)
+                PauseViewModel.StartPauseFeed().FireAndForgetAsync(LogManager);
+            else
+            {
+                PauseViewModel.EndPauseFeed();
+            }
+            OnPropertyChanged(nameof(IsPaused));
         }
     }
 }

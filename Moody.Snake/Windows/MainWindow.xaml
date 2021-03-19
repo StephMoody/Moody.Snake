@@ -29,5 +29,10 @@
         <Grid>
                 <ContentControl VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding ContentViewModel}"/>
                 <Rectangle Fill="HotPink" Opacity="0.5" Visibility="{Binding GameViewViewModel.IsPaused, Converter={StaticResource BoolToVisibilityConverter}}"></Rectangle>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding GameViewViewModel.IsPaused, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <TextBox Text="{Binding GameViewViewModel.PauseViewModel.Source, Mode=OneWay }"></TextBox>
+                        <TextBox Text="{Binding GameViewViewModel.PauseViewModel.NewsHeader, Mode=OneWay }"></TextBox>
+                        <TextBox Text="{Binding GameViewViewModel.PauseViewModel.NewsMessage, Mode=OneWay }"></TextBox>
+                </StackPanel>
         </Grid>
 </Window>
