@@ -15,6 +15,16 @@
     <DataTemplate DataType="{x:Type viewModels:StartViewViewModel}">
         <windows:StartView/>
     </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type game:PauseViewModel}">
+        <Grid>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBox Text="{Binding Source, Mode=OneWay }"></TextBox>
+                <TextBox Text="{Binding NewsHeader, Mode=OneWay }"></TextBox>
+                <TextBox Text="{Binding NewsMessage, Mode=OneWay }"></TextBox>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
  
     <DataTemplate DataType="{x:Type game:GameViewViewModel}">
         <windows:GameView DataContext="{Binding}"></windows:GameView>

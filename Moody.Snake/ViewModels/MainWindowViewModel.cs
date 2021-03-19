@@ -1,14 +1,9 @@
 using System;
-using System.ComponentModel;
-using System.Diagnostics.Eventing.Reader;
-using System.Net.Mime;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using JetBrains.Annotations;
 using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
-using Moody.Snake.Model;
 using Moody.Snake.ViewModels.Game;
 
 namespace Moody.Snake.ViewModels
@@ -16,40 +11,51 @@ namespace Moody.Snake.ViewModels
     internal class MainWindowViewModel : ViewModelBase
     {
         private readonly GameViewViewModel _gameViewViewModel;
-        private readonly SnakeLogic _snakeLogic;
         private readonly StartViewViewModel _startViewViewModel;
+        private readonly PauseViewModel _pauseViewModel;
+        private readonly IActiveMode _activeMode;
         private ViewModelBase _contentViewModel;
-        private Mode _currentMode;
         private Action<Key> _onKeyDownAction;
 
         public MainWindowViewModel([NotNull] ILogManager logManager,
             [NotNull] GameViewViewModel gameViewViewModel,
             [NotNull] StartViewViewModel startViewViewModel,
-            [NotNull] SnakeLogic snakeLogic) : base(logManager)
+            IActiveMode activeMode,
+            PauseViewModel pauseViewModel) : base(logManager)
         {
             _gameViewViewModel = gameViewViewModel;
             _startViewViewModel = startViewViewModel;
-            _snakeLogic = snakeLogic;
+            _activeMode = activeMode;
+            _pauseViewModel = pauseViewModel;
         }
 
         public override Task Initialize()
         {
             _gameViewViewModel.Initialize();
+            _pauseViewModel.Initialize();
             ContentViewModel = _startViewViewModel;
-            _currentMode = Mode.Menu;
             OnKeyDownAction = ExecuteOnKeyDown;
+            _activeMode.ModeChanged += ActiveModeOnModeChanged;
             return base.Initialize();
+        }
+
+        private void ActiveModeOnModeChanged(object sender, EventArgs e)
+        {
+            if (_activeMode.Value == Mode.Game)
+                ContentViewModel = GameViewViewModel;
+
+            if (_activeMode.Value == Mode.Pause)
+                ContentViewModel = _pauseViewModel;
         }
 
         private void ExecuteOnKeyDown(Key key)
         {
             try
             {
-                switch (_currentMode)
+                switch (_activeMode.Value)
                 {
                     case Mode.Menu:
-                        ContentViewModel = _gameViewViewModel;
-                        _currentMode = Mode.Game;
+                        _activeMode.SetValue(Mode.Game);
                         break;
                     case Mode.Game:
                     case Mode.Pause:

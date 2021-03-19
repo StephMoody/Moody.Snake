@@ -78,13 +78,16 @@
           <e p="Direction.cs" t="Include" />
           <e p="Field.cs" t="Include" />
           <e p="FieldContent.cs" t="Include" />
-          <e p="MoveLogic.cs" t="Include" />
+          <e p="IPauseProcessor.cs" t="Include" />
+          <e p="MoveCalculator.cs" t="Include" />
           <e p="MoveResult.cs" t="Include" />
           <e p="News" t="Include">
             <e p="INewsFeed.cs" t="Include" />
             <e p="NewsFeed.cs" t="Include" />
             <e p="NewsItem.cs" t="Include" />
           </e>
+          <e p="NewsFeedEventArgs.cs" t="Include" />
+          <e p="PauseProcessor.cs" t="Include" />
           <e p="SnakeLogic.cs" t="Include" />
         </e>
         <e p="Moody.Snake.csproj" t="IncludeRecursive" />
@@ -109,6 +112,7 @@
           <e p="GameResources.xaml" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
+          <e p="ActiveMode.cs" t="Include" />
           <e p="Game" t="Include">
             <e p="FieldViewModel.cs" t="Include" />
             <e p="GameHeaderViewModel.cs" t="Include" />
@@ -116,6 +120,7 @@
             <e p="PauseViewModel.cs" t="Include" />
             <e p="RowViewModel.cs" t="Include" />
           </e>
+          <e p="IActiveMode.cs" t="Include" />
           <e p="MainWindowViewModel.cs" t="Include" />
           <e p="Mode.cs" t="Include" />
           <e p="StartViewViewModel.cs" t="Include" />

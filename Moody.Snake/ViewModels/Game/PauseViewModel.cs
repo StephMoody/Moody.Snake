@@ -1,45 +1,29 @@
+using System;
 using System.Threading.Tasks;
 using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
-using Moody.Snake.Model.News;
+using Moody.Snake.Model;
 
 namespace Moody.Snake.ViewModels.Game
 {
-    public class PauseViewModel : ViewModelBase
-
+    internal class PauseViewModel : ViewModelBase
     {
         private string _newsHeader;
         private string _newsMessage;
-        private INewsFeed _newsFeed;
-        private bool _feedIsActive = false;
+        private readonly IPauseProcessor _pauseProcessor;
 
-        public PauseViewModel(ILogManager logManager, INewsFeed newsFeed) : base(logManager)
+        public PauseViewModel(ILogManager logManager, IPauseProcessor pauseProcessor) : base(logManager)
         {
-            _newsFeed = newsFeed;
+            _pauseProcessor = pauseProcessor;
         }
 
-        public void EndPauseFeed()
+        public override Task Initialize()
         {
-            _feedIsActive = false;
-        }
-        
-        public async Task StartPauseFeed()
-        {
-            if (_feedIsActive)
-                return;
-            
-            _feedIsActive = true;
-            while (_feedIsActive)
-            {
-                foreach (NewsItem newsItem in _newsFeed.News)
-                {
-                    NewsHeader = newsItem.Header;
-                    NewsMessage = newsItem.Message;
-                    await Task.Delay(5000);
-                }
-            }
+            _pauseProcessor.NewsUpdated += PauseProcessorOnNewsUpdated;
+            return base.Initialize();
         }
 
+    
         public string Source => "Quelle tagesschau.de";
 
         public string NewsHeader
@@ -61,5 +45,19 @@ namespace Moody.Snake.ViewModels.Game
                 OnPropertyChanged();
             }
         }
+        
+        private void PauseProcessorOnNewsUpdated(object sender, NewsFeedEventArgs e)
+        {
+            try
+            {
+                NewsHeader = e.NewsItem.Header;
+                NewsMessage = e.NewsItem.Message;
+            }
+            catch (Exception exception)
+            {
+                LogManager.Error(exception);
+            }
+        }
+
     }
 }

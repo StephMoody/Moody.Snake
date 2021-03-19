@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Moody.Common.Base;
 using Moody.Common.Extensions;
+using Moody.Snake.ViewModels;
 
 namespace Moody.Snake.Model
 {
@@ -15,17 +16,18 @@ namespace Moody.Snake.Model
         private Field _foodField;
         private int _lenght;
         private readonly Random _random = new Random(DateTime.Now.Millisecond);
-        private readonly MoveLogic _moveLogic;
-        private bool _isPaused;
+        private readonly MoveCalculator _moveCalculator;
+        private readonly IActiveMode _activeMode;
         private List<Field> _snake = new List<Field>();
         
         public Direction CurrentDirection { get; set; }
 
         public UpdateableProperty<int> Score = new UpdateableProperty<int>();
 
-        public SnakeLogic(MoveLogic moveLogic)
+        public SnakeLogic(MoveCalculator moveCalculator, IActiveMode activeMode)
         {
-            _moveLogic = moveLogic;
+            _moveCalculator = moveCalculator;
+            _activeMode = activeMode;
         }
 
         public Dictionary<int, List<Field>> Rows { get; } = new Dictionary<int, List<Field>>();
@@ -66,21 +68,15 @@ namespace Moody.Snake.Model
                 await Task.Delay(150);
             }
         }
-
-        public bool IsPaused
-        {
-            get => _isPaused;
-            set => _isPaused = value;
-        }
-
+        
         private bool Move()
         {
-            if (_isPaused)
+            if (_activeMode.Value == Mode.Pause)
                 return true;
             
             _activeSnakeHeaderField.Content = FieldContent.Empty;
             Field lastFieldOfOldSnakePositions = _snake[_snake.Count-1];
-            _snake = _moveLogic.CalculateNextField(_snake).ToList();
+            _snake = _moveCalculator.CalculateNextField(_snake).ToList();
             _nextField = _snake.First();
             MoveResult moveResult = EnterField();
 

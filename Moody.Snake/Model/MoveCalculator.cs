@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace Moody.Snake.Model
 {
-    internal class MoveLogic
+    internal class MoveCalculator
     {
         private readonly Lazy<SnakeLogic> _snakeLogic;
 
-        public MoveLogic(Lazy<SnakeLogic> snakeLogic)
+        public MoveCalculator(Lazy<SnakeLogic> snakeLogic)
         {
             _snakeLogic = snakeLogic;
         }

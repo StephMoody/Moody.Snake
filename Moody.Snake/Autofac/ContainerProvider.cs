@@ -18,13 +18,15 @@ namespace Moody.Snake.Autofac
             containerBuilder.RegisterType<MainWindowViewModel>().AsSelf().SingleInstance();
             containerBuilder.RegisterType<StartViewViewModel>().AsSelf().SingleInstance();
             containerBuilder.RegisterType<GameHeaderViewModel>().AsSelf().SingleInstance();
-            containerBuilder.RegisterType<GameView>().AsSelf().ForViewModel(typeof(MainWindowViewModel));
+            containerBuilder.RegisterType<GameView>().AsSelf();
             containerBuilder.RegisterType<RowViewModel>().AsSelf().InstancePerDependency();
             containerBuilder.RegisterType<FieldViewModel>().AsSelf().InstancePerDependency();
-            containerBuilder.RegisterType<MainWindow>().AsSelf().ForViewModel(typeof(GameViewViewModel));
+            containerBuilder.RegisterType<MainWindow>().AsSelf().ForViewModel(typeof(MainWindowViewModel));
             containerBuilder.RegisterType<SnakeLogic>().AsSelf().SingleInstance();
-            containerBuilder.RegisterType<MoveLogic>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<MoveCalculator>().AsSelf().SingleInstance();
             containerBuilder.RegisterType<NewsFeed>().AsSelf().As<INewsFeed>().As<IInitializable>().SingleInstance();
+            containerBuilder.RegisterType<PauseProcessor>().As<IPauseProcessor>().SingleInstance();
+            containerBuilder.RegisterType<ActiveMode>().As<IActiveMode>().SingleInstance();
             containerBuilder.RegisterType<PauseViewModel>().AsSelf();
             
             Registrator.RegisterTypes(containerBuilder);

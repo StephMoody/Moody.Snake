@@ -41,7 +41,7 @@ namespace Moody.UI.Autofac
             out Type type)
         {
             type = default;
-            if (parameterInfo.ParameterType != typeof(ViewModelBase))
+            if (!parameterInfo.ParameterType.IsSubclassOf(typeof(ViewModelBase)))
                 return false;
 
             if (!(context is ResolveRequestContext resolveRequestContext))
