@@ -2,31 +2,36 @@ using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using JetBrains.Annotations;
+using Moody.Common.Base;
 using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
-using Moody.Snake.ViewModels.Game;
+using Moody.Snake.ViewModels.Content;
+using Moody.Snake.ViewModels.Mode;
 
 namespace Moody.Snake.ViewModels
 {
     internal class MainWindowViewModel : ViewModelBase
     {
-        private readonly GameViewViewModel _gameViewViewModel;
-        private readonly StartViewViewModel _startViewViewModel;
-        private readonly PauseViewModel _pauseViewModel;
-        private readonly IActiveMode _activeMode;
-        private ViewModelBase _contentViewModel;
+        [NotNull] private readonly GameViewViewModel _gameViewViewModel;
+        [NotNull] private readonly StartViewViewModel _startViewViewModel;
+        [NotNull] private readonly PauseViewModel _pauseViewModel;
+        [NotNull] private readonly GameOverViewViewModel _gameOverViewViewModel;
+        [NotNull] private readonly IActiveMode _activeMode;
+        private ContentViewModelBase _contentViewModel;
         private Action<Key> _onKeyDownAction;
 
         public MainWindowViewModel([NotNull] ILogManager logManager,
             [NotNull] GameViewViewModel gameViewViewModel,
             [NotNull] StartViewViewModel startViewViewModel,
             IActiveMode activeMode,
-            PauseViewModel pauseViewModel) : base(logManager)
+            [NotNull] PauseViewModel pauseViewModel,
+            [NotNull] GameOverViewViewModel gameOverViewViewModel) : base(logManager)
         {
             _gameViewViewModel = gameViewViewModel;
             _startViewViewModel = startViewViewModel;
             _activeMode = activeMode;
             _pauseViewModel = pauseViewModel;
+            _gameOverViewViewModel = gameOverViewViewModel;
         }
 
         public override Task Initialize()
@@ -39,33 +44,24 @@ namespace Moody.Snake.ViewModels
             return base.Initialize();
         }
 
-        private void ActiveModeOnModeChanged(object sender, EventArgs e)
+        private void ActiveModeOnModeChanged(object sender, ValueChangedEventArgs<ContentModes> valueChangedEventArgs)
         {
-            if (_activeMode.Value == Mode.Game)
+            if (valueChangedEventArgs.NewValue == ContentModes.Game)
                 ContentViewModel = GameViewViewModel;
 
-            if (_activeMode.Value == Mode.Pause)
+            if (valueChangedEventArgs.NewValue == ContentModes.Pause)
                 ContentViewModel = _pauseViewModel;
+
+            if (valueChangedEventArgs.NewValue == ContentModes.GameOver)
+                ContentViewModel = _gameOverViewViewModel;
+            
         }
 
         private void ExecuteOnKeyDown(Key key)
         {
             try
             {
-                switch (_activeMode.Value)
-                {
-                    case Mode.Menu:
-                        _activeMode.SetValue(Mode.Game);
-                        break;
-                    case Mode.Game:
-                    case Mode.Pause:
-                    {
-                        _gameViewViewModel.HandleKeyDown(key);
-                        break;
-                    }
-                    default:
-                        break;
-                }
+                ContentViewModel.HandleKeyDown(key);
             }
             catch (Exception e)
             {
@@ -73,7 +69,7 @@ namespace Moody.Snake.ViewModels
             }
         }
 
-        public ViewModelBase ContentViewModel
+        public ContentViewModelBase ContentViewModel
         {
             get => _contentViewModel;
             set

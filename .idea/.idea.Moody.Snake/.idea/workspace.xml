@@ -7,23 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9efdbcd2-e653-424e-837a-471b80243db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/Model/IPauseProcessor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/Model/NewsFeedEventArgs.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/Model/PauseProcessor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/ActiveMode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/IActiveMode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Moody.Common/EventArgs/ValueChangedEventArgs.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/ContentViewModelBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/GameOverViewViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/ContentModes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Moody.Snake/Windows/GameOverView.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Common/Base/ValueChangedEventArgs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Common/Base/ValueChangedEventArgs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Application.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Moody.Snake/Autofac/ContainerProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Autofac/ContainerProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Model/MoveLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Model/MoveCalculator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Moody.Snake/Moody.Snake.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Moody.Snake.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Moody.Snake/Resources/GameResources.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Resources/GameResources.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/PauseViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/PauseViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/ActiveMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/ActiveMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/GameViewViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/PauseViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/PauseViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/IActiveMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/IActiveMode.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Windows/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Windows/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.UI/Autofac/AutofacExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.UI/Autofac/AutofacExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/StartViewViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/StartViewViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +36,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DF1F87B6-36F8-4884-B72E-0BFECF552AF6/cc/be9f03fd/NavigationService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/52/5b3323b9/Random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E90BEB44-6898-4ECF-B706-59AC067ECC5C/8c/0d568a5c/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DADD22E-0197-42CE-80AA-EFEF99855BE0/20/a38c57a0/EventHandler`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DF1F87B6-36F8-4884-B72E-0BFECF552AF6/8e/fffc07e2/PropertyPathWorker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB1E3DD4-E6EE-4509-8F8A-7B53B311AFF1/e0/edd41d08/DependencyProperty.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0EBEB27C-A6DF-45BB-AEEC-500DC98FF733/35/11410d07/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
@@ -49,26 +59,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/9D/CircularDependencyDetectorMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/E0/RegistrationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/83/ResolvedParameter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/89/2399a327/EventHandler`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/CA/ConstructorBinder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/C8/BoundConstructor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/D3/ReflectionActivator.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/MoveResult.cs" />
-      <option value="$PROJECT_DIR$/Moody.Common/Moody.Common.csproj" />
-      <option value="$PROJECT_DIR$/Moody.Common/Base/ValueChangedEventArgs.cs" />
-      <option value="$PROJECT_DIR$/Moody.Common/Base/UpdateableProperty.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/GameHeaderViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/GameWindowViewModel.cs" />
-      <option value="$PROJECT_DIR$/WpfSandBox/ViewModelBlue.cs" />
-      <option value="$PROJECT_DIR$/WpfSandBox/MainWindow.xaml" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/SnakeViewViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/SnakeGameWindow.xaml" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/StartWindow.xaml" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/StartWindow.xaml.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/GameWindow.xaml" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/GameWindow.xaml.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/Windows/MainWindowClass.xaml.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/Windows/MainView.xaml.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/Behavior/UserControlKeyDown.cs" />
@@ -96,16 +93,30 @@
       <option value="$PROJECT_DIR$/Moody.UI/Windows/BusyspinnerWindow.xaml.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/Model/MoveLogic.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/Model/MoveCalculator.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Resources/GameResources.xaml" />
       <option value="$PROJECT_DIR$/Moody.Snake/Windows/MainWindow.xaml" />
       <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/ActiveMode.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/PauseViewModel.cs" />
       <option value="$PROJECT_DIR$/Moody.Snake/Model/PauseProcessor.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Autofac/ContainerProvider.cs" />
       <option value="$PROJECT_DIR$/Moody.UI/Autofac/AutofacExtensions.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Windows/GameOverView.xaml.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Windows/GameOverView.xaml" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/GameOverViewViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Autofac/ContainerProvider.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/ContentViewModelBase.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/ContentViewModelBase.cs" />
+      <option value="$PROJECT_DIR$/Moody.Common/EventArgs/ValueChangedEventArgs.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/IActiveMode.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/ContentModes.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Common/Base/ValueChangedEventArgs.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/StartViewViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/PauseViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/GameOverViewViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/GameViewViewModel.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/ActiveMode.cs" />
+      <option value="$PROJECT_DIR$/Moody.Snake/Resources/GameResources.xaml" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mKTn930ThKPwPN3AcM0ygPKmZ9" />
@@ -207,7 +218,9 @@
       <workItem from="1615029431145" duration="280000" />
       <workItem from="1615030082052" duration="2478000" />
       <workItem from="1615712201416" duration="3034000" />
-      <workItem from="1616184802880" duration="4339000" />
+      <workItem from="1616184802880" duration="4475000" />
+      <workItem from="1616399052251" duration="7000" />
+      <workItem from="1616868830981" duration="2647000" />
     </task>
     <task id="LOCAL-00001" summary="updated SnakeLogic!">
       <created>1609323875679</created>
@@ -251,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616185177591</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="improvements and refactorings!">
+      <created>1616189316438</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616189316438</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
@@ -310,21 +330,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Moody.UI/Autofac/AutofacExtensions.cs</url>
-          <line>28</line>
-          <properties documentPath="C:\Users\Steph\RiderProjects\Moody.Snake\Moody.UI\Autofac\AutofacExtensions.cs" initialLine="28" containingFunctionPresentation="method 'ValueAccessor'">
-            <startOffsets>
-              <option value="1117" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1191" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints" />
       </default-breakpoints>

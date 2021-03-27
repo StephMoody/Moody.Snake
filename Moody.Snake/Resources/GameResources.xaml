@@ -5,18 +5,23 @@
                     xmlns:windows="clr-namespace:Moody.Snake.Windows"
                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                     xmlns:behavior="clr-namespace:Moody.Snake.Behavior"
-                    xmlns:game="clr-namespace:Moody.Snake.ViewModels.Game">
+                    xmlns:game="clr-namespace:Moody.Snake.ViewModels.Game"
+                    xmlns:content="clr-namespace:Moody.Snake.ViewModels.Content">
     
     
     <converter:FieldContentToFillConverter x:Key="FieldContentToFillConverter"></converter:FieldContentToFillConverter>
     <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"></converter:BoolToVisibilityConverter>
     
 
-    <DataTemplate DataType="{x:Type viewModels:StartViewViewModel}">
+    <DataTemplate DataType="{x:Type content:StartViewViewModel}">
         <windows:StartView/>
     </DataTemplate>
     
-    <DataTemplate DataType="{x:Type game:PauseViewModel}">
+    <DataTemplate DataType="{x:Type content:GameOverViewViewModel}">
+        <windows:GameOverView/>
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type content:PauseViewModel}">
         <Grid>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBox Text="{Binding Source, Mode=OneWay }"></TextBox>
@@ -26,7 +31,7 @@
         </Grid>
     </DataTemplate>
  
-    <DataTemplate DataType="{x:Type game:GameViewViewModel}">
+    <DataTemplate DataType="{x:Type content:GameViewViewModel}">
         <windows:GameView DataContext="{Binding}"></windows:GameView>
     </DataTemplate>
     

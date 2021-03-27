@@ -5,6 +5,7 @@ using Moody.Common.Contracts;
 using Moody.Snake.Autofac;
 using Moody.Snake.Model;
 using Moody.Snake.ViewModels;
+using Moody.Snake.ViewModels.Content;
 using Moody.Snake.Windows;
 using Moody.UI.Contracts;
 

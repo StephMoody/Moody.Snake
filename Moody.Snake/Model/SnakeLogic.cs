@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Moody.Common.Base;
 using Moody.Common.Extensions;
 using Moody.Snake.ViewModels;
+using Moody.Snake.ViewModels.Mode;
 
 namespace Moody.Snake.Model
 {
@@ -17,17 +18,18 @@ namespace Moody.Snake.Model
         private int _lenght;
         private readonly Random _random = new Random(DateTime.Now.Millisecond);
         private readonly MoveCalculator _moveCalculator;
-        private readonly IActiveMode _activeMode;
+        private readonly IPauseProcessor _pauseProcessor;
         private List<Field> _snake = new List<Field>();
+        public event EventHandler<EventArgs> GameOver; 
         
         public Direction CurrentDirection { get; set; }
 
         public UpdateableProperty<int> Score = new UpdateableProperty<int>();
 
-        public SnakeLogic(MoveCalculator moveCalculator, IActiveMode activeMode)
+        public SnakeLogic(MoveCalculator moveCalculator, IPauseProcessor pauseProcessor)
         {
             _moveCalculator = moveCalculator;
-            _activeMode = activeMode;
+            _pauseProcessor = pauseProcessor;
         }
 
         public Dictionary<int, List<Field>> Rows { get; } = new Dictionary<int, List<Field>>();
@@ -67,11 +69,13 @@ namespace Moody.Snake.Model
             {
                 await Task.Delay(150);
             }
+            
+            GameOver?.Invoke(this, EventArgs.Empty);
         }
         
         private bool Move()
         {
-            if (_activeMode.Value == Mode.Pause)
+            if (_pauseProcessor.IsPaused)
                 return true;
             
             _activeSnakeHeaderField.Content = FieldContent.Empty;

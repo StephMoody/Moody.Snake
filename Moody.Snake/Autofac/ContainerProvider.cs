@@ -3,7 +3,9 @@ using Moody.Common.Contracts;
 using Moody.Snake.Model;
 using Moody.Snake.Model.News;
 using Moody.Snake.ViewModels;
+using Moody.Snake.ViewModels.Content;
 using Moody.Snake.ViewModels.Game;
+using Moody.Snake.ViewModels.Mode;
 using Moody.Snake.Windows;
 using Moody.UI.Autofac;
 
@@ -14,26 +16,36 @@ namespace Moody.Snake.Autofac
         public ILifetimeScope Build()
         {
             ContainerBuilder containerBuilder = new ContainerBuilder();
-            containerBuilder.RegisterType<GameViewViewModel>().AsSelf().SingleInstance();
-            containerBuilder.RegisterType<MainWindowViewModel>().AsSelf().SingleInstance();
-            containerBuilder.RegisterType<StartViewViewModel>().AsSelf().SingleInstance();
-            containerBuilder.RegisterType<GameHeaderViewModel>().AsSelf().SingleInstance();
-            containerBuilder.RegisterType<GameView>().AsSelf();
-            containerBuilder.RegisterType<RowViewModel>().AsSelf().InstancePerDependency();
-            containerBuilder.RegisterType<FieldViewModel>().AsSelf().InstancePerDependency();
+            
+            RegisterViewModel(containerBuilder);
+            RegisterModel(containerBuilder);
             containerBuilder.RegisterType<MainWindow>().AsSelf().ForViewModel(typeof(MainWindowViewModel));
-            containerBuilder.RegisterType<SnakeLogic>().AsSelf().SingleInstance();
-            containerBuilder.RegisterType<MoveCalculator>().AsSelf().SingleInstance();
-            containerBuilder.RegisterType<NewsFeed>().AsSelf().As<INewsFeed>().As<IInitializable>().SingleInstance();
-            containerBuilder.RegisterType<PauseProcessor>().As<IPauseProcessor>().SingleInstance();
-            containerBuilder.RegisterType<ActiveMode>().As<IActiveMode>().SingleInstance();
-            containerBuilder.RegisterType<PauseViewModel>().AsSelf();
             
             Registrator.RegisterTypes(containerBuilder);
             Common.Autofac.Registrator.RegisterTypes(containerBuilder);
             
             return containerBuilder.Build();
         }
-        
+
+        private void RegisterModel(ContainerBuilder containerBuilder)
+        {
+            containerBuilder.RegisterType<SnakeLogic>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<MoveCalculator>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<NewsFeed>().AsSelf().As<INewsFeed>().As<IInitializable>().SingleInstance();
+            containerBuilder.RegisterType<PauseProcessor>().As<IPauseProcessor>().SingleInstance();
+            containerBuilder.RegisterType<ActiveMode>().As<IActiveMode>().SingleInstance();
+        }
+
+        private void RegisterViewModel(ContainerBuilder containerBuilder)
+        {
+            containerBuilder.RegisterType<GameViewViewModel>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<MainWindowViewModel>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<StartViewViewModel>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<GameHeaderViewModel>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<RowViewModel>().AsSelf().InstancePerDependency();
+            containerBuilder.RegisterType<FieldViewModel>().AsSelf().InstancePerDependency();
+            containerBuilder.RegisterType<PauseViewModel>().AsSelf().SingleInstance();;
+            containerBuilder.RegisterType<GameOverViewViewModel>().AsSelf().SingleInstance();;
+        }
     }
 }

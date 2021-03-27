@@ -6,10 +6,12 @@ using System.Windows.Input;
 using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
 using Moody.Snake.Model;
+using Moody.Snake.ViewModels.Game;
+using Moody.Snake.ViewModels.Mode;
 
-namespace Moody.Snake.ViewModels.Game
+namespace Moody.Snake.ViewModels.Content
 {
-    internal class GameViewViewModel : ViewModelBase
+    internal class GameViewViewModel : ContentViewModelBase
     {
         private readonly Func<RowViewModel> _rowViewModelCreator;
         private readonly SnakeLogic _snakeLogic;
@@ -69,14 +71,13 @@ namespace Moody.Snake.ViewModels.Game
             return Task.CompletedTask;
         }
 
-        public bool IsPaused => _activeMode.Value == Mode.Pause;
-
-        public void HandleKeyDown(Key key)
+        
+        public override void HandleKeyDown(Key key)
         {
             switch (key)
             {
                 case Key.P:
-                    _activeMode.SetValue(IsPaused ? Mode.Game : Mode.Pause);
+                    _activeMode.SetValue(IsPaused ? Mode.ContentModes.Game : Mode.ContentModes.Pause);
                     break;
                 case Key.Escape:
                     _onCloseWindow();
@@ -95,5 +96,8 @@ namespace Moody.Snake.ViewModels.Game
                     break;
             }
         }
+        
+        private bool IsPaused => _activeMode.Value == Mode.ContentModes.Pause;
+
     }
 }

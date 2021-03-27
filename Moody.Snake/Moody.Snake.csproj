@@ -122,16 +122,21 @@
         <Compile Include="Model\News\NewsItem.cs" />
         <Compile Include="Model\PauseProcessor.cs" />
         <Compile Include="Model\SnakeLogic.cs" />
-        <Compile Include="ViewModels\ActiveMode.cs" />
+        <Compile Include="ViewModels\Content\ContentViewModelBase.cs" />
+        <Compile Include="ViewModels\Content\GameOverViewViewModel.cs" />
+        <Compile Include="ViewModels\Content\GameViewViewModel.cs" />
+        <Compile Include="ViewModels\Content\PauseViewModel.cs" />
+        <Compile Include="ViewModels\Content\StartViewViewModel.cs" />
         <Compile Include="ViewModels\Game\FieldViewModel.cs" />
         <Compile Include="ViewModels\Game\GameHeaderViewModel.cs" />
-        <Compile Include="ViewModels\Game\GameViewViewModel.cs" />
-        <Compile Include="ViewModels\Game\PauseViewModel.cs" />
         <Compile Include="ViewModels\Game\RowViewModel.cs" />
-        <Compile Include="ViewModels\IActiveMode.cs" />
         <Compile Include="ViewModels\MainWindowViewModel.cs" />
-        <Compile Include="ViewModels\Mode.cs" />
-        <Compile Include="ViewModels\StartViewViewModel.cs" />
+        <Compile Include="ViewModels\Mode\ActiveMode.cs" />
+        <Compile Include="ViewModels\Mode\IActiveMode.cs" />
+        <Compile Include="ViewModels\Mode\ContentModes.cs" />
+        <Compile Include="Windows\GameOverView.xaml.cs">
+          <DependentUpon>GameOverView.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Windows\GameView.xaml.cs" />
         <Compile Include="Windows\MainWindow.xaml.cs">
           <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -174,6 +179,7 @@
     </ItemGroup>
     <ItemGroup>
       <Page Include="Resources\GameResources.xaml" />
+      <Page Include="Windows\GameOverView.xaml" />
       <Page Include="Windows\MainWindow.xaml" />
       <Page Include="Windows\GameView.xaml" />
       <Page Include="Windows\StartView.xaml" />
