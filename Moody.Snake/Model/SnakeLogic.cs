@@ -5,8 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Moody.Common.Base;
 using Moody.Common.Extensions;
-using Moody.Snake.ViewModels;
-using Moody.Snake.ViewModels.Mode;
 
 namespace Moody.Snake.Model
 {

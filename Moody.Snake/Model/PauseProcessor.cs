@@ -44,7 +44,7 @@ namespace Moody.Snake.Model
                 foreach (NewsItem newsItem in _newsFeed.News)
                 {
                     NewsUpdated?.Invoke(this, new NewsFeedEventArgs(newsItem));
-                    await Task.Delay(5000);
+                    await Task.Delay(8000);
                     if(!_feedIsActive)
                         break;
                 }
