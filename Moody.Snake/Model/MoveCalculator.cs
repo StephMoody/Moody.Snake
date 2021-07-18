@@ -1,27 +1,33 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using Moody.Snake.Model.Game;
 
 namespace Moody.Snake.Model
 {
     internal class MoveCalculator
     {
-        private readonly Lazy<SnakeLogic> _snakeLogic;
+        private readonly Lazy<MoveProcessor> _snakeLogic;
+        private readonly ISnake _snake;
+        private readonly IGameField _gameField;
 
-        public MoveCalculator(Lazy<SnakeLogic> snakeLogic)
+        public MoveCalculator(Lazy<MoveProcessor> snakeLogic,
+            ISnake snake,
+            IGameField gameField)
         {
             _snakeLogic = snakeLogic;
+            _snake = snake;
+            _gameField = gameField;
         }
 
-        public IEnumerable<Field> CalculateNextField(IList<Field> snake)
+        public IEnumerable<Field> CalculateNextPositions()
         {
             Field lastField = null;
             List<Field> nextSnakePositions = new List<Field>();
 
             int count = 0;
-            foreach (Field field in snake)
+            foreach (Field field in _snake.Fields)
             {
                 try
                 {
@@ -51,7 +57,7 @@ namespace Moody.Snake.Model
                         continue;
                     }
 
-                    Field predecessorField = snake[count-1];
+                    Field predecessorField = _snake.Fields[count-1];
                     if(field.Column == predecessorField.Column && field.Row == predecessorField.Row)
                     {
                         nextSnakePositions.Add(field);
@@ -73,31 +79,31 @@ namespace Moody.Snake.Model
         private Field MoveUp(Field currentField)
         {
             return
-                _snakeLogic.Value.Rows.ContainsKey(currentField.Row -1)
-                    ? _snakeLogic.Value.Rows[currentField.Row -1].First(b => b.Column == currentField.Column)
-                    : _snakeLogic.Value.Rows[_snakeLogic.Value.Rows.Count].First(b => b.Column == currentField.Column);
+                _gameField.Rows.ContainsKey(currentField.Row -1)
+                    ? _gameField.Rows[currentField.Row -1].First(b => b.Column == currentField.Column)
+                    : _gameField.Rows[_gameField.Rows.Count].First(b => b.Column == currentField.Column);
         }
         
         private Field MoveDown(Field currentField)
         {
             return
-                _snakeLogic.Value.Rows.ContainsKey(currentField.Row + 1)
-                    ? _snakeLogic.Value.Rows[currentField.Row + 1].First(b => b.Column == currentField.Column)
-                    : _snakeLogic.Value.Rows[1].First(b => b.Column == currentField.Column);
+                _gameField.Rows.ContainsKey(currentField.Row + 1)
+                    ? _gameField.Rows[currentField.Row + 1].First(b => b.Column == currentField.Column)
+                    : _gameField.Rows[1].First(b => b.Column == currentField.Column);
         }
         
         private Field MoveRight(Field currentField)
         {
             return
-                _snakeLogic.Value.Rows[currentField.Row].FirstOrDefault(x => x.Column == currentField.Column + 1) ??
-                _snakeLogic.Value.Rows[currentField.Row][0];
+                _gameField.Rows[currentField.Row].FirstOrDefault(x => x.Column == currentField.Column + 1) ??
+                _gameField.Rows[currentField.Row][0];
         }
 
         private Field MoveLeft(Field currentField)
         {
             return
-                _snakeLogic.Value.Rows[currentField.Row].FirstOrDefault(x => x.Column == currentField.Column - 1) ??
-                _snakeLogic.Value.Rows[currentField.Row][_snakeLogic.Value.Rows.Count-1];
+                _gameField.Rows[currentField.Row].FirstOrDefault(x => x.Column == currentField.Column - 1) ??
+                _gameField.Rows[currentField.Row][_gameField.Rows.Count-1];
         }
     }
 }

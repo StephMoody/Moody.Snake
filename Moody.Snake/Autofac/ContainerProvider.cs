@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Moody.Common.Contracts;
 using Moody.Snake.Model;
+using Moody.Snake.Model.Game;
 using Moody.Snake.Model.News;
 using Moody.Snake.ViewModels;
 using Moody.Snake.ViewModels.Content;
@@ -29,7 +30,9 @@ namespace Moody.Snake.Autofac
 
         private void RegisterModel(ContainerBuilder containerBuilder)
         {
-            containerBuilder.RegisterType<SnakeLogic>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<MoveProcessor>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<GameField>().As<IGameField>().SingleInstance();
+            containerBuilder.RegisterType<Model.Game.Snake>().As<ISnake>().SingleInstance();
             containerBuilder.RegisterType<MoveCalculator>().AsSelf().SingleInstance();
             containerBuilder.RegisterType<NewsFeed>().AsSelf().As<INewsFeed>().As<IInitializable>().SingleInstance();
             containerBuilder.RegisterType<PauseProcessor>().As<IPauseProcessor>().SingleInstance();

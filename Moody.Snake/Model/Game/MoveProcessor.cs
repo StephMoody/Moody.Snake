@@ -6,61 +6,47 @@ using System.Threading.Tasks;
 using Moody.Common.Base;
 using Moody.Common.Extensions;
 
-namespace Moody.Snake.Model
+namespace Moody.Snake.Model.Game
 {
-    internal class SnakeLogic
+    internal class MoveProcessor
     {
-        private Field _activeSnakeHeaderField;
-        private Field _nextField;
-        private Field _foodField;
-        private int _lenght;
+        
         private readonly Random _random = new Random(DateTime.Now.Millisecond);
         private readonly MoveCalculator _moveCalculator;
         private readonly IPauseProcessor _pauseProcessor;
-        private List<Field> _snake = new List<Field>();
+        private readonly IGameField _gameField;
+        private readonly ISnake _snake;
+        private readonly FieldState _fieldState = new FieldState();
+        
         public event EventHandler<EventArgs> GameOver; 
         
         public Direction CurrentDirection { get; set; }
 
-        public UpdateableProperty<int> Score = new UpdateableProperty<int>();
+        public readonly UpdateableProperty<int> Score = new UpdateableProperty<int>();
 
-        public SnakeLogic(MoveCalculator moveCalculator, IPauseProcessor pauseProcessor)
+        public MoveProcessor(MoveCalculator moveCalculator,
+            IPauseProcessor pauseProcessor,
+            IGameField gameField,
+            ISnake snake)
         {
             _moveCalculator = moveCalculator;
             _pauseProcessor = pauseProcessor;
+            _gameField = gameField;
+            _snake = snake;
         }
-
-        public Dictionary<int, List<Field>> Rows { get; } = new Dictionary<int, List<Field>>();
-
+        
         public void Initialize(int length)
         {
-
+            _gameField.Initialize(length);
+            _snake.Initialize();
             CurrentDirection = Direction.Right;
-            _lenght = length;
             Score.Value = 0;
-            
-            for (int row = 1; row <= length; row++)
-            {
-                for (int column = 1; column <= length; column++)
-                {
-                    Field field = new Field();
-                    field.Initialize(row, column);
-                    field.Content = FieldContent.Empty;
-                    if (!Rows.ContainsKey(row))
-                        Rows[row] = new List<Field>();
-                    
-                    Rows[row].Add(field);
-                }
-            }
         }
         
         public async Task Start()
         {
-            _snake.Add(Rows[1].First());
-            _snake.Add(Rows[1].First());
-            _snake.Add(Rows[1].First());
-            _activeSnakeHeaderField = Rows[1].First();
-            _activeSnakeHeaderField.Content = FieldContent.Snake;
+            _fieldState.ActiveSnakeHeaderField = _gameField.Rows[1].First();
+            _fieldState.ActiveSnakeHeaderField.Content = FieldContent.Snake;
             await RefreshFoodField();
             
             while (Move())
@@ -76,12 +62,14 @@ namespace Moody.Snake.Model
             if (_pauseProcessor.IsPaused)
                 return true;
             
-            _activeSnakeHeaderField.Content = FieldContent.Empty;
-            Field lastFieldOfOldSnakePositions = _snake[_snake.Count-1];
-            _snake = _moveCalculator.CalculateNextField(_snake).ToList();
-            _nextField = _snake.First();
+            _fieldState.ActiveSnakeHeaderField.Content = FieldContent.Empty;
+            Field lastFieldOfOldSnakePositions = _snake.Fields.Last();
+            List<Field> nextPositionFields = _moveCalculator.CalculateNextPositions().ToList();
+            _snake.ApplyPosition(nextPositionFields);
+            
+            _fieldState.NextField = nextPositionFields.First();
             MoveResult moveResult = EnterField();
-
+            
             return ProcessMoveResult(moveResult, lastFieldOfOldSnakePositions);
         }
 
@@ -92,8 +80,8 @@ namespace Moody.Snake.Model
                 case MoveResult.Valid:
                 {
                     lastFieldOfOldSnakePositions.Content = FieldContent.Empty;
-                    _activeSnakeHeaderField = _nextField;
-                    foreach (Field field in _snake)
+                    _fieldState.ActiveSnakeHeaderField = _fieldState.NextField;
+                    foreach (Field field in _snake.Fields)
                     {
                         field.Content = FieldContent.Snake;
                     }
@@ -105,12 +93,12 @@ namespace Moody.Snake.Model
                 case MoveResult.Food:
                 {
                     lastFieldOfOldSnakePositions.Content = FieldContent.Empty;
-                    _activeSnakeHeaderField.Content = FieldContent.Empty;
-                    _activeSnakeHeaderField = _nextField;
-                    _activeSnakeHeaderField.Content = FieldContent.Snake;
+                    _fieldState.ActiveSnakeHeaderField.Content = FieldContent.Empty;
+                    _fieldState.ActiveSnakeHeaderField = _fieldState.NextField;
+                    _fieldState.ActiveSnakeHeaderField.Content = FieldContent.Snake;
                     Score.Value++;
-                    _snake.Add(_snake.Last());
-                    foreach (Field field in _snake)
+                    _snake.Grow(_snake.Fields.Last());
+                    foreach (Field field in _snake.Fields)
                     {
                         field.Content = FieldContent.Snake;
                     }
@@ -126,7 +114,7 @@ namespace Moody.Snake.Model
 
         private MoveResult EnterField()
         {
-            switch (_nextField.Content)
+            switch (_fieldState.NextField.Content)
             {
                 case FieldContent.Fruit:
                     return MoveResult.Food;
@@ -135,7 +123,7 @@ namespace Moody.Snake.Model
                 case FieldContent.Empty:
                     return MoveResult.Valid;
                 default:
-                    throw new InvalidEnumArgumentException(nameof(_nextField.Content), (int) _nextField.Content,
+                    throw new InvalidEnumArgumentException(nameof(_fieldState.NextField.Content), (int) _fieldState.NextField.Content,
                         typeof(FieldContent));
             }
         }
@@ -144,17 +132,17 @@ namespace Moody.Snake.Model
         {
             await Task.Delay(1000);
             
-            int foodX = _random.Next(1, _lenght);
-            int foodY = _random.Next(1,_lenght);
+            int foodX = _random.Next(1, _gameField.Lenght);
+            int foodY = _random.Next(1,_gameField.Lenght);
             
-            if(foodX == _activeSnakeHeaderField.Row && foodY == _activeSnakeHeaderField.Column)
+            if(foodX == _fieldState.ActiveSnakeHeaderField.Row && foodY == _fieldState.ActiveSnakeHeaderField.Column)
             {
                 await RefreshFoodField();
                 return;
             }
             
-            _foodField = Rows[foodX].Find(b=>b.Column == foodY);
-            _foodField.Content = FieldContent.Fruit;
+            _fieldState.FoodField = _gameField.Rows[foodX].Find(b=>b.Column == foodY);
+            _fieldState.FoodField.Content = FieldContent.Fruit;
         }
     }
 }

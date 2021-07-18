@@ -113,6 +113,10 @@
         <Compile Include="Model\Direction.cs" />
         <Compile Include="Model\Field.cs" />
         <Compile Include="Model\FieldContent.cs" />
+        <Compile Include="Model\Game\FieldState.cs" />
+        <Compile Include="Model\Game\GameField.cs" />
+        <Compile Include="Model\Game\Snake.cs" />
+        <Compile Include="Model\Game\MoveProcessor.cs" />
         <Compile Include="Model\IPauseProcessor.cs" />
         <Compile Include="Model\MoveCalculator.cs" />
         <Compile Include="Model\MoveResult.cs" />
@@ -121,7 +125,6 @@
         <Compile Include="Model\News\NewsFeed.cs" />
         <Compile Include="Model\News\NewsItem.cs" />
         <Compile Include="Model\PauseProcessor.cs" />
-        <Compile Include="Model\SnakeLogic.cs" />
         <Compile Include="ViewModels\Content\ContentViewModelBase.cs" />
         <Compile Include="ViewModels\Content\GameOverViewViewModel.cs" />
         <Compile Include="ViewModels\Content\GameViewViewModel.cs" />

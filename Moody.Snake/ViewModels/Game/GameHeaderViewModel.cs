@@ -4,21 +4,22 @@ using Moody.Common.Base;
 using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
 using Moody.Snake.Model;
+using Moody.Snake.Model.Game;
 
 namespace Moody.Snake.ViewModels.Game
 {
     internal class GameHeaderViewModel : ViewModelBase, IDisposable
     {
-        private readonly SnakeLogic _snakeLogic;
+        private readonly MoveProcessor _moveProcessor;
 
-        public GameHeaderViewModel(ILogManager logManager, SnakeLogic snakeLogic) : base(logManager)
+        public GameHeaderViewModel(ILogManager logManager, MoveProcessor moveProcessor) : base(logManager)
         {
-            _snakeLogic = snakeLogic;
+            _moveProcessor = moveProcessor;
         }
 
         public override Task Initialize()
         {
-            _snakeLogic.Score.ValueUpdated += ScoreOnValueUpdated;
+            _moveProcessor.Score.ValueUpdated += ScoreOnValueUpdated;
             return base.Initialize();
         }
 
@@ -34,11 +35,11 @@ namespace Moody.Snake.ViewModels.Game
             }
         }
 
-        public int CurrentScore => _snakeLogic.Score.Value;
+        public int CurrentScore => _moveProcessor.Score.Value;
 
         public void Dispose()
         {
-            _snakeLogic.Score.ValueUpdated -= ScoreOnValueUpdated;
+            _moveProcessor.Score.ValueUpdated -= ScoreOnValueUpdated;
         }
     }
 

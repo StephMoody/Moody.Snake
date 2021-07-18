@@ -4,8 +4,8 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Moody.Common.Contracts;
-using Moody.MVVM.Base.ViewModel;
 using Moody.Snake.Model;
+using Moody.Snake.Model.Game;
 using Moody.Snake.ViewModels.Game;
 using Moody.Snake.ViewModels.Mode;
 
@@ -14,23 +14,24 @@ namespace Moody.Snake.ViewModels.Content
     internal class GameViewViewModel : ContentViewModelBase
     {
         private readonly Func<RowViewModel> _rowViewModelCreator;
-        private readonly SnakeLogic _snakeLogic;
+        private readonly MoveProcessor _moveProcessor;
         private readonly GameHeaderViewModel _gameHeaderViewModel;
-        private Action _onCloseWindow;
         private readonly IActiveMode _activeMode;
+        private readonly IGameField _gameField;
 
         public GameViewViewModel(ILogManager logManager,
             Func<RowViewModel> rowViewModelCreator,
-            SnakeLogic snakeLogic,
+            MoveProcessor moveProcessor,
             GameHeaderViewModel gameHeaderViewModel,
             PauseViewModel pauseViewModel, 
-            IActiveMode activeMode) : base(logManager)
+            IActiveMode activeMode, IGameField gameField) : base(logManager)
         {
             _rowViewModelCreator = rowViewModelCreator;
-            _snakeLogic = snakeLogic;
+            _moveProcessor = moveProcessor;
             _gameHeaderViewModel = gameHeaderViewModel;
             PauseViewModel = pauseViewModel;
             _activeMode = activeMode;
+            _gameField = gameField;
         }
 
         public PauseViewModel PauseViewModel { get; }
@@ -39,18 +40,12 @@ namespace Moody.Snake.ViewModels.Content
         
         public GameHeaderViewModel GameHeaderViewModel => _gameHeaderViewModel;
         
-        public Action OnCloseWindow
-        {
-            private get => _onCloseWindow;
-            set => _onCloseWindow = value;
-        }
-
         public Direction CurrentDirection
         {
-            get => _snakeLogic.CurrentDirection;
+            get => _moveProcessor.CurrentDirection;
             set
             {
-                _snakeLogic.CurrentDirection = value;
+                _moveProcessor.CurrentDirection = value;
                 OnPropertyChanged();
             }
 
@@ -58,7 +53,7 @@ namespace Moody.Snake.ViewModels.Content
         
         public override Task Initialize()
         {
-            foreach (KeyValuePair<int, List<Field>> snakeLogicRow in _snakeLogic.Rows)
+            foreach (KeyValuePair<int, List<Field>> snakeLogicRow in _gameField.Rows)
             {
                 RowViewModel newRowViewModel = _rowViewModelCreator.Invoke();
                 newRowViewModel.Initialize(snakeLogicRow.Key, snakeLogicRow.Value);
@@ -79,9 +74,6 @@ namespace Moody.Snake.ViewModels.Content
                 case Key.P:
                     _activeMode.SetValue(IsPaused ? Mode.ContentModes.Game : Mode.ContentModes.Pause);
                     break;
-                case Key.Escape:
-                    _onCloseWindow();
-                    return;
                 case Key.Up:
                     CurrentDirection = Direction.Up;
                     break;

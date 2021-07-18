@@ -19,6 +19,7 @@ namespace Moody.Snake.ViewModels
         [NotNull] private readonly IActiveMode _activeMode;
         private ContentViewModelBase _contentViewModel;
         private Action<Key> _onKeyDownAction;
+        private Action _onCloseWindow; 
 
         public MainWindowViewModel([NotNull] ILogManager logManager,
             [NotNull] GameViewViewModel gameViewViewModel,
@@ -61,6 +62,12 @@ namespace Moody.Snake.ViewModels
         {
             try
             {
+                if (key == Key.Escape)
+                {
+                    _onCloseWindow();
+                    return;
+                }
+                
                 ContentViewModel.HandleKeyDown(key);
             }
             catch (Exception e)
@@ -80,6 +87,12 @@ namespace Moody.Snake.ViewModels
         }
 
         public GameViewViewModel GameViewViewModel => _gameViewViewModel;
+        
+        public Action OnCloseWindow
+        {
+            private get => _onCloseWindow;
+            set => _onCloseWindow = value;
+        }
 
         public Action<Key> OnKeyDownAction
         {

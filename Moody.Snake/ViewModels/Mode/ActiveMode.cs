@@ -1,6 +1,7 @@
 using System;
 using Moody.Common.Base;
 using Moody.Snake.Model;
+using Moody.Snake.Model.Game;
 
 namespace Moody.Snake.ViewModels.Mode
 {
@@ -8,13 +9,13 @@ namespace Moody.Snake.ViewModels.Mode
     {
         private ContentModes _contentModes = ContentModes.Menu;
         private readonly IPauseProcessor _pauseProcessor;
-        private readonly SnakeLogic _snakeLogic;
+        private readonly MoveProcessor _moveProcessor;
 
-        public ActiveMode(IPauseProcessor pauseProcessor, SnakeLogic snakeLogic)
+        public ActiveMode(IPauseProcessor pauseProcessor, MoveProcessor moveProcessor)
         {
             _pauseProcessor = pauseProcessor;
-            _snakeLogic = snakeLogic;
-            _snakeLogic.GameOver += SnakeLogicOnGameOver;
+            _moveProcessor = moveProcessor;
+            _moveProcessor.GameOver += MoveProcessorOnGameOver;
         }
         
         public ContentModes Value => _contentModes;
@@ -34,7 +35,7 @@ namespace Moody.Snake.ViewModels.Mode
 
         public event EventHandler<ValueChangedEventArgs<ContentModes>> ModeChanged;
         
-        private void SnakeLogicOnGameOver(object sender, EventArgs e)
+        private void MoveProcessorOnGameOver(object sender, EventArgs e)
         {
             try
             {

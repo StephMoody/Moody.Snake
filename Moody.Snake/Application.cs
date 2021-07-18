@@ -4,6 +4,7 @@ using Autofac;
 using Moody.Common.Contracts;
 using Moody.Snake.Autofac;
 using Moody.Snake.Model;
+using Moody.Snake.Model.Game;
 using Moody.Snake.ViewModels;
 using Moody.Snake.ViewModels.Content;
 using Moody.Snake.Windows;
@@ -23,13 +24,13 @@ namespace Moody.Snake
                await initializableItem.Initialize();
             }
             
-            SnakeLogic snakeLogic = lifeTimeScope.Resolve<SnakeLogic>();
-            snakeLogic.Initialize(30);
+            MoveProcessor moveProcessor = lifeTimeScope.Resolve<MoveProcessor>();
+            moveProcessor.Initialize(30);
             IWindowShower<MainWindow, MainWindowViewModel> windowShower = lifeTimeScope.Resolve<IWindowShower<MainWindow, MainWindowViewModel>>();
             await windowShower.ViewModel.Initialize();
             windowShower.Show();
             
-            await snakeLogic.Start();
+            await moveProcessor.Start();
         }
     }
 }
