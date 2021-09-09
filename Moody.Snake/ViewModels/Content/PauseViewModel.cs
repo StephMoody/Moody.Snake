@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using JetBrains.Annotations;
@@ -24,13 +25,20 @@ namespace Moody.Snake.ViewModels.Content
         public override Task Initialize()
         {
             _pauseProcessor.NewsUpdated += PauseProcessorOnNewsUpdated;
+            _pauseProcessor.PauseUpdated += PauseProcessorOnPauseUpdated;
             return base.Initialize();
+        }
+
+        private void PauseProcessorOnPauseUpdated(object sender, EventArgs e)
+        {
+            if(!_pauseProcessor.IsPaused)
+                _activeMode.SetValue(ContentModes.Game);
         }
 
         public override void HandleKeyDown(Key key)
         {
             if(key == Key.Escape || key == Key.P)
-                _activeMode.SetValue(ContentModes.Game);
+                _pauseProcessor.ProcessPause();
         }
 
 

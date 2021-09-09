@@ -7,5 +7,6 @@ namespace Moody.Snake.Model
         bool IsPaused { get; }
         void ProcessPause();
         event EventHandler<NewsFeedEventArgs> NewsUpdated;
+        event EventHandler<EventArgs> PauseUpdated;
     }
 }

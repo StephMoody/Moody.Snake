@@ -6,8 +6,11 @@
     <projectFile>SandBox/SandBox.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52f0d0e0-eb45-43d6-bac0-9588857ab02d" name="Default Changelist" comment="">
+    <list default="true" id="52f0d0e0-eb45-43d6-bac0-9588857ab02d" name="Default Changelist" comment="some refactorings!">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/Model/IPauseProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Model/IPauseProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/PauseViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/PauseViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,31 +20,40 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DADD22E-0197-42CE-80AA-EFEF99855BE0/20/a38c57a0/EventHandler`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/f2/cca63d0d/FrameworkElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/52/5b3323b9/Random.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DF1F87B6-36F8-4884-B72E-0BFECF552AF6/cc/be9f03fd/NavigationService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/C8/BoundConstructor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/D3/ReflectionActivator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/CA/ConstructorBinder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/c8/fb780c87/Control.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/83/ResolvedParameter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/21/147b53c2/TextBoxBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/24/b452aab2/TextBox.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/Application.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/34/1f9937d5/TextBlock.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/E0/RegistrationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/220F2AAB-ED1D-4738-94A8-8B65AAF6C105/e7/b751c5ce/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E90BEB44-6898-4ECF-B706-59AC067ECC5C/8c/0d568a5c/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/9D/CircularDependencyDetectorMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C5EC303C-34CA-4964-8FE7-744590F7A693/6d/633c6981/PropertyPathWorker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C5EC303C-34CA-4964-8FE7-744590F7A693/8c/77803ddb/XamlReader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0EBEB27C-A6DF-45BB-AEEC-500DC98FF733/35/11410d07/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8462C93B-00B5-4616-9C50-6EB8281FD255/56/11b38748/List`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C5EC303C-34CA-4964-8FE7-744590F7A693/37/0101a983/Window.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB1E3DD4-E6EE-4509-8F8A-7B53B311AFF1/e0/edd41d08/DependencyProperty.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/89/2399a327/EventHandler`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/f2/cca63d0d/FrameworkElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB1E3DD4-E6EE-4509-8F8A-7B53B311AFF1/e0/edd41d08/DependencyProperty.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DADD22E-0197-42CE-80AA-EFEF99855BE0/20/a38c57a0/EventHandler`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C5EC303C-34CA-4964-8FE7-744590F7A693/37/0101a983/Window.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8462C93B-00B5-4616-9C50-6EB8281FD255/56/11b38748/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0EBEB27C-A6DF-45BB-AEEC-500DC98FF733/35/11410d07/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C5EC303C-34CA-4964-8FE7-744590F7A693/8c/77803ddb/XamlReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C5EC303C-34CA-4964-8FE7-744590F7A693/6d/633c6981/PropertyPathWorker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/9D/CircularDependencyDetectorMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E90BEB44-6898-4ECF-B706-59AC067ECC5C/8c/0d568a5c/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/ViewModels/Mode/ActiveMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/220F2AAB-ED1D-4738-94A8-8B65AAF6C105/e7/b751c5ce/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/E0/RegistrationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/34/1f9937d5/TextBlock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/24/b452aab2/TextBox.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/21/147b53c2/TextBoxBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/83/ResolvedParameter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/c8/fb780c87/Control.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/CA/ConstructorBinder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/D3/ReflectionActivator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/C8/BoundConstructor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DF1F87B6-36F8-4884-B72E-0BFECF552AF6/cc/be9f03fd/NavigationService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/Application.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DF1F87B6-36F8-4884-B72E-0BFECF552AF6/8e/fffc07e2/PropertyPathWorker.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1wxeUxQMSb3DQiWQDh1k1J8HPLN" />
@@ -54,6 +66,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34993875" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -87,8 +101,16 @@
       <updated>1629404689758</updated>
       <workItem from="1629404698235" duration="89000" />
       <workItem from="1631201691044" duration="268000" />
-      <workItem from="1631202072438" duration="569000" />
+      <workItem from="1631202072438" duration="1563000" />
     </task>
+    <task id="LOCAL-00001" summary="some refactorings!">
+      <created>1631203308791</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631203308791</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
@@ -211,5 +233,41 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="some refactorings!" />
+    <option name="LAST_COMMIT_MESSAGE" value="some refactorings!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Moody.Snake/Model/PauseProcessor.cs</url>
+          <line>24</line>
+          <properties documentPath="C:\Users\Steph\RiderProjects\Moody.Snake\Moody.Snake\Model\PauseProcessor.cs" initialLine="24" containingFunctionPresentation="method 'ProcessPause'">
+            <startOffsets>
+              <option value="633" />
+            </startOffsets>
+            <endOffsets>
+              <option value="654" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Moody.Snake/Model/PauseProcessor.cs</url>
+          <line>55</line>
+          <properties documentPath="C:\Users\Steph\RiderProjects\Moody.Snake\Moody.Snake\Model\PauseProcessor.cs" initialLine="55" containingFunctionPresentation="method 'EndPauseFeed'">
+            <startOffsets>
+              <option value="1485" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1507" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
