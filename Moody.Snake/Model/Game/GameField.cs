@@ -2,13 +2,6 @@ using System.Collections.Generic;
 
 namespace Moody.Snake.Model.Game
 {
-    internal interface IGameField
-    {
-        Dictionary<int, List<Field>> Rows { get; }
-        int Lenght { get; }
-        void Initialize(int length);
-    }
-
     internal class GameField : IGameField
     {
         public Dictionary<int, List<Field>> Rows { get; } = new Dictionary<int, List<Field>>();

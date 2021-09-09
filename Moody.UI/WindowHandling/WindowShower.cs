@@ -4,7 +4,7 @@ using Moody.UI.Contracts;
 
 namespace Moody.UI.WindowHandling
 {
-    internal class WindowShower<TWindow, TViewModel> : IWindowShower<TWindow, TViewModel> where TViewModel : ViewModelBase where TWindow : Window
+    internal class WindowShower<TWindow, TViewModel> : IWindowShower<TWindow,TViewModel> where TViewModel : ViewModelBase where TWindow : Window
     {
         private readonly TWindow _window;
         private readonly TViewModel _viewModelBase;

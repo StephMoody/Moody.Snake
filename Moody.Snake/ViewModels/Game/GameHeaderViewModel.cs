@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Moody.Common.Base;
 using Moody.Common.Contracts;
 using Moody.MVVM.Base.ViewModel;
-using Moody.Snake.Model;
 using Moody.Snake.Model.Game;
 
 namespace Moody.Snake.ViewModels.Game

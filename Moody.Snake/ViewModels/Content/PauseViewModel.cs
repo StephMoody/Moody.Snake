@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using JetBrains.Annotations;
 using Moody.Common.Contracts;
-using Moody.MVVM.Base.ViewModel;
 using Moody.Snake.Model;
 using Moody.Snake.ViewModels.Mode;
 

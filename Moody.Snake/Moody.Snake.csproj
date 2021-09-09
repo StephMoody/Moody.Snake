@@ -115,6 +115,8 @@
         <Compile Include="Model\FieldContent.cs" />
         <Compile Include="Model\Game\FieldState.cs" />
         <Compile Include="Model\Game\GameField.cs" />
+        <Compile Include="Model\Game\IGameField.cs" />
+        <Compile Include="Model\Game\ISnake.cs" />
         <Compile Include="Model\Game\Snake.cs" />
         <Compile Include="Model\Game\MoveProcessor.cs" />
         <Compile Include="Model\IPauseProcessor.cs" />

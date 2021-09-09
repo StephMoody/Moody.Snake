@@ -1,18 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Controls;
 
 namespace Moody.Snake.Model.Game
 {
-    internal interface ISnake
-    {
-        void Grow(Field field);
-
-        void Initialize();
-        IReadOnlyList<Field> Fields { get; }
-        void ApplyPosition(List<Field> nextPositionFields);
-    }
-
     internal class Snake : ISnake
     {
         private readonly List<Field> _snakeFields = new List<Field>();

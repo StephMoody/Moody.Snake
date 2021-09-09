@@ -72,7 +72,7 @@ namespace Moody.Snake.ViewModels.Content
             switch (key)
             {
                 case Key.P:
-                    _activeMode.SetValue(IsPaused ? Mode.ContentModes.Game : Mode.ContentModes.Pause);
+                    _activeMode.SetValue(IsPaused ? ContentModes.Game : ContentModes.Pause);
                     break;
                 case Key.Up:
                     CurrentDirection = Direction.Up;

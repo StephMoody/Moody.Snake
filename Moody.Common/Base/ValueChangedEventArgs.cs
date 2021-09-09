@@ -1,6 +1,3 @@
-using System;
-using System.Threading;
-
 namespace Moody.Common.Base
 {
     public class ValueChangedEventArgs<T> : System.EventArgs

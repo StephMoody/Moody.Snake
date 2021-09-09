@@ -5,7 +5,7 @@ using Moody.Snake.Model.Game;
 
 namespace Moody.Snake.ViewModels.Mode
 {
-    internal class ActiveMode : IActiveMode
+    internal class ActiveMode : IActiveMode, IDisposable
     {
         private ContentModes _contentModes = ContentModes.Menu;
         private readonly IPauseProcessor _pauseProcessor;
@@ -41,11 +41,15 @@ namespace Moody.Snake.ViewModels.Mode
             {
                 SetValue(ContentModes.GameOver);
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 //
             }
         }
 
+        public void Dispose()
+        {
+            _moveProcessor.GameOver -= MoveProcessorOnGameOver;
+        }
     }
 }

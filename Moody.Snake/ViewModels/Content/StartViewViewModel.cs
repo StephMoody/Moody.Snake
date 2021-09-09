@@ -1,6 +1,5 @@
 using System.Windows.Input;
 using Moody.Common.Contracts;
-using Moody.MVVM.Base.ViewModel;
 using Moody.Snake.ViewModels.Mode;
 
 namespace Moody.Snake.ViewModels.Content

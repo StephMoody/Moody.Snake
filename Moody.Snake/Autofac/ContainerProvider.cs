@@ -37,6 +37,7 @@ namespace Moody.Snake.Autofac
             containerBuilder.RegisterType<NewsFeed>().AsSelf().As<INewsFeed>().As<IInitializable>().SingleInstance();
             containerBuilder.RegisterType<PauseProcessor>().As<IPauseProcessor>().SingleInstance();
             containerBuilder.RegisterType<ActiveMode>().As<IActiveMode>().SingleInstance();
+            containerBuilder.RegisterType<FieldState>().As<IFieldState>().InstancePerDependency();
         }
 
         private void RegisterViewModel(ContainerBuilder containerBuilder)
@@ -47,8 +48,8 @@ namespace Moody.Snake.Autofac
             containerBuilder.RegisterType<GameHeaderViewModel>().AsSelf().SingleInstance();
             containerBuilder.RegisterType<RowViewModel>().AsSelf().InstancePerDependency();
             containerBuilder.RegisterType<FieldViewModel>().AsSelf().InstancePerDependency();
-            containerBuilder.RegisterType<PauseViewModel>().AsSelf().SingleInstance();;
-            containerBuilder.RegisterType<GameOverViewViewModel>().AsSelf().SingleInstance();;
+            containerBuilder.RegisterType<PauseViewModel>().AsSelf().SingleInstance();
+            containerBuilder.RegisterType<GameOverViewViewModel>().AsSelf().SingleInstance();
         }
     }
 }

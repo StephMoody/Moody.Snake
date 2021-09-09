@@ -6,22 +6,8 @@
     <projectFile>SandBox/SandBox.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9efdbcd2-e653-424e-837a-471b80243db8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/Model/Game/FieldState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/Model/Game/GameField.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/Model/Game/MoveProcessor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Moody.Snake/Model/Game/Snake.cs" afterDir="false" />
+    <list default="true" id="52f0d0e0-eb45-43d6-bac0-9588857ab02d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Moody.Snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Application.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Autofac/ContainerProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Autofac/ContainerProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Model/MoveCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Model/MoveCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Moody.Snake.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Moody.Snake.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/GameViewViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/GameViewViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameHeaderViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameHeaderViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/ActiveMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/ActiveMode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Moody.Snake/Windows/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Moody.Snake/Windows/MainWindow.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,14 +16,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DADD22E-0197-42CE-80AA-EFEF99855BE0/20/a38c57a0/EventHandler`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,18 +27,15 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/CA/ConstructorBinder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/c8/fb780c87/Control.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/83/ResolvedParameter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/Application.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/21/147b53c2/TextBoxBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/ViewModels/Content/GameViewViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/24/b452aab2/TextBox.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/Application.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4CF8CCF3-0275-4D7E-9A6F-2E7D28F7D96E/34/1f9937d5/TextBlock.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/E0/RegistrationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/220F2AAB-ED1D-4738-94A8-8B65AAF6C105/e7/b751c5ce/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E90BEB44-6898-4ECF-B706-59AC067ECC5C/8c/0d568a5c/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F5DC2E4F-D74B-4E81-B9ED-3A744F93B033/9D/CircularDependencyDetectorMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/ViewModels/Mode/ActiveMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C5EC303C-34CA-4964-8FE7-744590F7A693/6d/633c6981/PropertyPathWorker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/ViewModels/Content/GameViewViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C5EC303C-34CA-4964-8FE7-744590F7A693/8c/77803ddb/XamlReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0EBEB27C-A6DF-45BB-AEEC-500DC98FF733/35/11410d07/Enumerable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8462C93B-00B5-4616-9C50-6EB8281FD255/56/11b38748/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -69,62 +44,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/89/2399a327/EventHandler`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DF1F87B6-36F8-4884-B72E-0BFECF552AF6/8e/fffc07e2/PropertyPathWorker.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/GameView.xaml.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/StartView.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/StartView.xaml.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/StartViewViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/GameView.xaml" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/StartView.xaml" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Converter/BoolToVisibilityConverter.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Behavior/WindowsKeyDown.cs" />
-      <option value="$PROJECT_DIR$/Moody.MVVM.Base/Behavior/CloseWindowBehavior.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Behavior/CloseWindowBehavior.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/App.xaml.cs" />
-      <option value="$PROJECT_DIR$/SandBox/Program.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/NewsFeed.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/NewsItem.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/News/NewsItem.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Application.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/News/NewsFeed.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/News/INewsFeed.cs" />
-      <option value="$PROJECT_DIR$/Moody.UI/Windows/BusyspinnerWindow.xaml.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/MoveLogic.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/GameViewViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/ActiveMode.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Game/PauseViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.UI/Autofac/AutofacExtensions.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/GameOverView.xaml.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/GameOverViewViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/ContentViewModelBase.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/ContentViewModelBase.cs" />
-      <option value="$PROJECT_DIR$/Moody.Common/EventArgs/ValueChangedEventArgs.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/IActiveMode.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/ContentModes.cs" />
-      <option value="$PROJECT_DIR$/Moody.Common/Base/ValueChangedEventArgs.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/StartViewViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/PauseViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/GameOverViewViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Mode/ActiveMode.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/GameOverView.xaml" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Resources/GameResources.xaml" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/PauseProcessor.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/SnakeLogic.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/Game/GameField.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/Game/FieldState.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/MoveCalculator.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/Game/Snake.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/Game/SnakeLogic.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Autofac/ContainerProvider.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Model/Game/MoveProcessor.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/MainWindowViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/ViewModels/Content/GameViewViewModel.cs" />
-      <option value="$PROJECT_DIR$/Moody.Snake/Windows/MainWindow.xaml" />
-    </changedPaths>
-  </component>
-  <component name="ProjectId" id="1mKTn930ThKPwPN3AcM0ygPKmZ9" />
+  <component name="ProjectId" id="1wxeUxQMSb3DQiWQDh1k1J8HPLN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -134,18 +54,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3502435" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
   </component>
-  <component name="RunManager" selected=".NET Project.Moody.Snake">
-    <configuration name="Moody.Snake" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+  <component name="RunManager">
+    <configuration name="Unnamed" type="DotNetProject" factoryName=".NET Project" nameIsGenerated="true">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Moody.Snake/bin/Debug/Moody.Snake.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Moody.Snake/bin/Debug" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -155,43 +72,7 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="Console" />
-      <option name="PROJECT_TFM" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="SandBox" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/SandBox/SandBox.csproj" />
-      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
-      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
-      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
-    <configuration name="WpfSandBox" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/WpfSandBox/WpfSandBox.csproj" />
-      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
-      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
-      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="Console" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.2" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -200,108 +81,23 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9efdbcd2-e653-424e-837a-471b80243db8" name="Default Changelist" comment="" />
-      <created>1609241446310</created>
+      <created>1629404689758</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1609241446310</updated>
-      <workItem from="1609241454539" duration="442000" />
-      <workItem from="1609241941719" duration="10000" />
-      <workItem from="1609321041757" duration="2812000" />
-      <workItem from="1609498569519" duration="293000" />
-      <workItem from="1609503750196" duration="1485000" />
-      <workItem from="1609505812350" duration="449000" />
-      <workItem from="1609787912696" duration="1683000" />
-      <workItem from="1611690329538" duration="2857000" />
-      <workItem from="1612810476024" duration="2655000" />
-      <workItem from="1613214919176" duration="7662000" />
-      <workItem from="1613810194941" duration="4663000" />
-      <workItem from="1614022610465" duration="2862000" />
-      <workItem from="1614283278756" duration="2314000" />
-      <workItem from="1615025702314" duration="1118000" />
-      <workItem from="1615028116112" duration="1280000" />
-      <workItem from="1615029431145" duration="280000" />
-      <workItem from="1615030082052" duration="2478000" />
-      <workItem from="1615712201416" duration="3034000" />
-      <workItem from="1616184802880" duration="4475000" />
-      <workItem from="1616399052251" duration="7000" />
-      <workItem from="1616868830981" duration="2884000" />
-      <workItem from="1625417871019" duration="1779000" />
-      <workItem from="1626345815175" duration="729000" />
-      <workItem from="1626600710323" duration="1810000" />
+      <updated>1629404689758</updated>
+      <workItem from="1629404698235" duration="89000" />
+      <workItem from="1631201691044" duration="268000" />
+      <workItem from="1631202072438" duration="569000" />
     </task>
-    <task id="LOCAL-00001" summary="updated SnakeLogic!">
-      <created>1609323875679</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1609323875679</updated>
-    </task>
-    <task id="LOCAL-00002" summary="added fruits and updated move logic!">
-      <created>1611692612291</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1611692612291</updated>
-    </task>
-    <task id="LOCAL-00003" summary="added startscreen">
-      <created>1613812537788</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1613812537788</updated>
-    </task>
-    <task id="LOCAL-00004" summary="introducing pause-mode!">
-      <created>1614025491329</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1614025491329</updated>
-    </task>
-    <task id="LOCAL-00005" summary="CloseWindow!">
-      <created>1614285604990</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1614285604990</updated>
-    </task>
-    <task id="LOCAL-00006" summary="improvements and refactorings!">
-      <created>1616185177591</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1616185177591</updated>
-    </task>
-    <task id="LOCAL-00007" summary="improvements and refactorings!">
-      <created>1616189316438</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1616189316438</updated>
-    </task>
-    <task id="LOCAL-00008" summary="refactorings and GameOverView">
-      <created>1616871723996</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1616871723996</updated>
-    </task>
-    <task id="LOCAL-00009" summary="better looking ui!">
-      <created>1625419657124</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1625419657124</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="1">
+        <entry key="7e0ca2c8-3749-4ab0-a374-2f8c4f8a760f">
           <value>
             <State>
               <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
@@ -314,10 +110,35 @@
                       </list>
                     </value>
                   </entry>
-                  <entry key="roots">
+                  <entry key="structure">
                     <value>
                       <list>
-                        <option value="$PROJECT_DIR$" />
+                        <option value="dir:C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/Autofac2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="873e9157-8c22-4475-be66-d6d82b799e99">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/Autofac2" />
                       </list>
                     </value>
                   </entry>
@@ -331,32 +152,64 @@
             <State />
           </value>
         </entry>
+        <entry key="faf03f0e-0f33-4696-ac7b-4f0b67fb9c9c">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/Autofac" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="fcb348e0-1dbf-42f9-8c09-900f2f8a493a">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/Steph/RiderProjects/Moody.Snake/Moody.Snake/Autofac" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="OPEN_GENERIC_TABS">
       <map>
-        <entry key="1" value="TOOL_WINDOW" />
+        <entry key="873e9157-8c22-4475-be66-d6d82b799e99" value="TOOL_WINDOW" />
+        <entry key="faf03f0e-0f33-4696-ac7b-4f0b67fb9c9c" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="updated SnakeLogic!" />
-    <MESSAGE value="added fruits and updated move logic!" />
-    <MESSAGE value="added startscreen" />
-    <MESSAGE value="introducing pause-mode!" />
-    <MESSAGE value="CloseWindow!" />
-    <MESSAGE value="improvements and refactorings!" />
-    <MESSAGE value="refactorings and GameOverView" />
-    <MESSAGE value="better looking ui!" />
-    <option name="LAST_COMMIT_MESSAGE" value="better looking ui!" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <default-breakpoints>
-        <breakpoint enabled="true" type="DotNet Exception Breakpoints" />
-      </default-breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

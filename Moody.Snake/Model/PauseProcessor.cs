@@ -18,7 +18,7 @@ namespace Moody.Snake.Model
             _logManager = logManager;
         }
 
-        public bool IsPaused { get; private set; } = false;
+        public bool IsPaused { get; private set; }
 
         public void ProcessPause()
         {

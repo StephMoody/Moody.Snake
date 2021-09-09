@@ -16,7 +16,7 @@ namespace Moody.Snake.Model.Game
         private readonly IPauseProcessor _pauseProcessor;
         private readonly IGameField _gameField;
         private readonly ISnake _snake;
-        private readonly FieldState _fieldState = new FieldState();
+        private readonly IFieldState _fieldState;
         
         public event EventHandler<EventArgs> GameOver; 
         
@@ -27,12 +27,13 @@ namespace Moody.Snake.Model.Game
         public MoveProcessor(MoveCalculator moveCalculator,
             IPauseProcessor pauseProcessor,
             IGameField gameField,
-            ISnake snake)
+            ISnake snake, IFieldState fieldState)
         {
             _moveCalculator = moveCalculator;
             _pauseProcessor = pauseProcessor;
             _gameField = gameField;
             _snake = snake;
+            _fieldState = fieldState;
         }
         
         public void Initialize(int length)

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Interop;
 
 namespace Moody.Snake.Windows
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
